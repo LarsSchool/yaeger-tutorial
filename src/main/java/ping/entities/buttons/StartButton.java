@@ -21,7 +21,7 @@ public class StartButton extends TextEntity implements MouseButtonPressedListene
 	private Ping ping;
 
 	public StartButton(Coordinate2D initialLocation, Ping ping){
-	    super(initialLocation,"Play game");
+	    super(initialLocation,"Play Ping (definitely not Pong)");
 	    this.ping = ping;
 	    setFill(Color.PURPLE);
 	    setFont(Font.font("Roboto", FontWeight.BOLD, 30));
