@@ -1,4 +1,4 @@
-package ping;
+package ping.entities;
 
 public class Speler2 {
 

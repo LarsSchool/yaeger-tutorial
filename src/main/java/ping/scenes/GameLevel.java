@@ -26,16 +26,16 @@ public class GameLevel extends DynamicScene implements EntitySpawnerContainer, T
 	public void setupScene() {
 		// TODO Auto-generated method stub
 //		setBackgroundAudio("audio/waterworld.mp3");
-//		setBackgroundImage("backgrounds/background2.jpg");
+		setBackgroundImage("backgrounds/background2.jpg");
 	}
 
 	@Override
 	public void setupEntities() {
 		// TODO Auto-generated method stub
-		HealthText HealthPoints = new HealthText(new Coordinate2D(getWidth() - 150, 10));
-		addEntity(HealthPoints);
-		var bubblesPoppedText = new BubblesPoppedText(new Coordinate2D(0, 30));
-		addEntity(bubblesPoppedText);
+//		HealthText HealthPoints = new HealthText(new Coordinate2D(getWidth() - 150, 10));
+//		addEntity(HealthPoints);
+//		var bubblesPoppedText = new BubblesPoppedText(new Coordinate2D(0, 30));
+//		addEntity(bubblesPoppedText);
 //		Swordfish zwaardvis = new Swordfish(new Coordinate2D(500, 150));
 //		addEntity(zwaardvis);
 //		Hanny hanny = new Hanny(new Coordinate2D(1, 1), HealthPoints, bubblesPoppedText, waterworld);
@@ -47,13 +47,13 @@ public class GameLevel extends DynamicScene implements EntitySpawnerContainer, T
 
 	@Override
 	public void setupEntitySpawners() {
-		BubbleSpawner airSpawner = new BubbleSpawner(getWidth(), getHeight());
-		addEntitySpawner(airSpawner);
+//		BubbleSpawner airSpawner = new BubbleSpawner(getWidth(), getHeight());
+//		addEntitySpawner(airSpawner);
 	}
 
 	@Override
 	public void setupTileMaps() {
-		addTileMap(new CoralTileMap());
+//		addTileMap(new CoralTileMap());
 	}
 
 }

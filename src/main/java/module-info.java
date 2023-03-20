@@ -4,6 +4,7 @@ module waterworld {
 
     exports com.github.hanyaeger.tutorial;
     exports com.github.hanyaeger.tutorial.entities.map;
+    exports ping;
 
     opens audio;
     opens backgrounds;
