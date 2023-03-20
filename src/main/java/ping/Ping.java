@@ -5,7 +5,7 @@ import com.github.hanyaeger.api.YaegerGame;
 public class Ping extends YaegerGame{
 
 	public Ping() {
-		test
+		
 	}
 	
 	public static void main(String[] args){
