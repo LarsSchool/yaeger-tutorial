@@ -2,10 +2,9 @@ package ping;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
 
-public class Ping_Game extends YaegerGame{
+public class Ping extends YaegerGame{
 
-	public Ping_Game() {
-		// TODO Auto-generated constructor stub
+	public Ping() {
 	}
 	
 	public static void main(String[] args){
@@ -21,5 +20,9 @@ public class Ping_Game extends YaegerGame{
 
 	@Override
 	public void setupScenes(){
+	}
+	
+	public void setScene(int scene) {
+		setActiveScene(scene);
 	}
 }

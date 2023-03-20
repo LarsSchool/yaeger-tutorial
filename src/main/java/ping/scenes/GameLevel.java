@@ -1,4 +1,4 @@
-package com.github.hanyaeger.tutorial.scenes;
+package ping.scenes;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.EntitySpawnerContainer;
@@ -25,8 +25,8 @@ public class GameLevel extends DynamicScene implements EntitySpawnerContainer, T
 	@Override
 	public void setupScene() {
 		// TODO Auto-generated method stub
-		setBackgroundAudio("audio/waterworld.mp3");
-		setBackgroundImage("backgrounds/background2.jpg");
+//		setBackgroundAudio("audio/waterworld.mp3");
+//		setBackgroundImage("backgrounds/background2.jpg");
 	}
 
 	@Override
@@ -36,12 +36,12 @@ public class GameLevel extends DynamicScene implements EntitySpawnerContainer, T
 		addEntity(HealthPoints);
 		var bubblesPoppedText = new BubblesPoppedText(new Coordinate2D(0, 30));
 		addEntity(bubblesPoppedText);
-		Swordfish zwaardvis = new Swordfish(new Coordinate2D(500, 150));
-		addEntity(zwaardvis);
-		Hanny hanny = new Hanny(new Coordinate2D(1, 1), HealthPoints, bubblesPoppedText, waterworld);
-		addEntity(hanny);
-		Sharky sharky = new Sharky(new Coordinate2D(150, 300));
-		addEntity(sharky);
+//		Swordfish zwaardvis = new Swordfish(new Coordinate2D(500, 150));
+//		addEntity(zwaardvis);
+//		Hanny hanny = new Hanny(new Coordinate2D(1, 1), HealthPoints, bubblesPoppedText, waterworld);
+//		addEntity(hanny);
+//		Sharky sharky = new Sharky(new Coordinate2D(150, 300));
+//		addEntity(sharky);
 
 	}
 

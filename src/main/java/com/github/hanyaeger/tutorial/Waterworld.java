@@ -2,9 +2,10 @@ package com.github.hanyaeger.tutorial;
 
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
-import com.github.hanyaeger.tutorial.scenes.GameLevel;
-import com.github.hanyaeger.tutorial.scenes.GameOver;
-import com.github.hanyaeger.tutorial.scenes.TitleScene;
+
+import ping.scenes.GameLevel;
+import ping.scenes.GameOver;
+import ping.scenes.TitleScene;
 
 public class Waterworld extends YaegerGame{
 

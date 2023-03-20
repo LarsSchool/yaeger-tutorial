@@ -1,10 +1,11 @@
-package com.github.hanyaeger.tutorial.scenes;
+package ping.scenes;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.scenes.StaticScene;
 import com.github.hanyaeger.tutorial.Waterworld;
-import com.github.hanyaeger.tutorial.entities.buttons.ExitButton;
-import com.github.hanyaeger.tutorial.entities.buttons.PlayAgainButton;
+
+import ping.entities.buttons.ExitButton;
+import ping.entities.buttons.PlayAgainButton;
 
 
 public class GameOver extends StaticScene{

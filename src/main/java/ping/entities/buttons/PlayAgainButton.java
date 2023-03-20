@@ -1,6 +1,4 @@
-package com.github.hanyaeger.tutorial.entities.buttons;
-
-import java.util.Optional;
+package ping.entities.buttons;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
@@ -15,15 +13,15 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
-public class StartButton extends TextEntity implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener{
-		
+public class PlayAgainButton extends TextEntity implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener{
+	
 	private Waterworld waterworld;
 
-	public StartButton(Coordinate2D initialLocation, Waterworld waterworld){
-	    super(initialLocation,"Play game");
+	public PlayAgainButton(Coordinate2D initialLocation, Waterworld waterworld){
+	    super(initialLocation,"Play again");
 	    this.waterworld = waterworld;
-	    setFill(Color.PURPLE);
-	    setFont(Font.font("Roboto", FontWeight.BOLD, 30));
+	    setFill(Color.GREEN);
+	    setFont(Font.font("Roboto", FontWeight.BOLD, 80));
 	}
 
 	@Override
@@ -33,15 +31,13 @@ public class StartButton extends TextEntity implements MouseButtonPressedListene
 
 	@Override
 	public void onMouseEntered(){
-	    setFill(Color.VIOLET);
+	    setFill(Color.LIGHTGREEN);
 	    setCursor(Cursor.HAND);
 	}
 
 	@Override
 	public void onMouseExited(){
-	    setFill(Color.PURPLE);
+	    setFill(Color.GREEN);
 	    setCursor(Cursor.DEFAULT);
 	}
-
-
 }

@@ -1,4 +1,4 @@
-package com.github.hanyaeger.tutorial.entities.buttons;
+package ping.entities.buttons;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
