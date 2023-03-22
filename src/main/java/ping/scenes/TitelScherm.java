@@ -9,7 +9,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import ping.Ping;
-import ping.entities.buttons.StartButton;
+import ping.entities.buttons.MultiplayerButton;
+import ping.entities.buttons.SingleplayerButton;
 
 public class TitelScherm extends StaticScene{
 	private Ping ping;
@@ -30,9 +31,12 @@ public class TitelScherm extends StaticScene{
 	        new Coordinate2D(getWidth() / 2, getHeight() / 8),
 	        "Ping"
 	    );
-	    StartButton startButton = new StartButton(new Coordinate2D((getWidth()/8 *2)-15, (getHeight()/6 * 4) + 40), ping);
+	    SingleplayerButton singleplayerButton = new SingleplayerButton(new Coordinate2D((getWidth()/8 * 3) + 50, (getHeight()/6 * 4) + 40), ping);
 
-	    pingText.setAnchorPoint(AnchorPoint.CENTER_CENTER);
+		MultiplayerButton multiplayerButton = new MultiplayerButton(new Coordinate2D((getWidth()/8 * 3) + 50, (getHeight()/6 * 4) + 100), ping);
+
+
+		pingText.setAnchorPoint(AnchorPoint.CENTER_CENTER);
 
 	    pingText.setFill(Color.ORANGE);
 
@@ -40,7 +44,8 @@ public class TitelScherm extends StaticScene{
 
 	    addEntity(pingText);
 
-	    addEntity(startButton);
+	    addEntity(singleplayerButton);
+		addEntity(multiplayerButton);
 	}
 
 	
