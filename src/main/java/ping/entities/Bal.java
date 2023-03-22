@@ -1,5 +1,4 @@
 package ping.entities;
 
-public class Speler2 {
-
+public class Bal {
 }
