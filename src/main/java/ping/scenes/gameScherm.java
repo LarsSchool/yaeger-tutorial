@@ -13,20 +13,22 @@ import com.github.hanyaeger.tutorial.entities.swordfish.Swordfish;
 import com.github.hanyaeger.tutorial.entities.text.BubblesPoppedText;
 import com.github.hanyaeger.tutorial.entities.text.HealthText;
 
-public class GameLevel extends DynamicScene implements EntitySpawnerContainer, TileMapContainer {
+import ping.Ping;
 
-	Waterworld waterworld;
+public class gameScherm extends DynamicScene implements EntitySpawnerContainer, TileMapContainer {
 
-	public GameLevel(Waterworld waterworld) {
+	Ping ping;
+
+	public gameScherm(Ping ping) {
 		// TODO Auto-generated constructor stub
-		this.waterworld = waterworld;
+		this.ping = ping;
 	}
 
 	@Override
 	public void setupScene() {
 		// TODO Auto-generated method stub
 //		setBackgroundAudio("audio/waterworld.mp3");
-		setBackgroundImage("backgrounds/background2.jpg");
+		setBackgroundImage("backgrounds/background_ping.png");
 	}
 
 	@Override
