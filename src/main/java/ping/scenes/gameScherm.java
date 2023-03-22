@@ -2,6 +2,7 @@ package ping.scenes;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.EntitySpawnerContainer;
+import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import com.github.hanyaeger.api.scenes.TileMapContainer;
 import com.github.hanyaeger.tutorial.Waterworld;
@@ -14,6 +15,7 @@ import com.github.hanyaeger.tutorial.entities.text.BubblesPoppedText;
 import com.github.hanyaeger.tutorial.entities.text.HealthText;
 
 import ping.Ping;
+import ping.entities.Middenlijn;
 
 public class gameScherm extends DynamicScene implements EntitySpawnerContainer, TileMapContainer {
 
@@ -33,8 +35,10 @@ public class gameScherm extends DynamicScene implements EntitySpawnerContainer, 
 
 	@Override
 	public void setupEntities() {
-		// TODO Auto-generated method stub
-//		HealthText HealthPoints = new HealthText(new Coordinate2D(getWidth() - 150, 10));
+		
+		Middenlijn middenlijn = new Middenlijn(new Coordinate2D(getWidth()/2 - 20 - 25, 0), new Size(40 + 50, getHeight()) , ping);
+	    addEntity(middenlijn);
+		//		HealthText HealthPoints = new HealthText(new Coordinate2D(getWidth() - 150, 10));
 //		addEntity(HealthPoints);
 //		var bubblesPoppedText = new BubblesPoppedText(new Coordinate2D(0, 30));
 //		addEntity(bubblesPoppedText);
