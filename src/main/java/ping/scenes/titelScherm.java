@@ -12,10 +12,10 @@ import javafx.scene.text.FontWeight;
 import ping.Ping;
 import ping.entities.buttons.StartButton;
 
-public class TitleScene extends StaticScene{
+public class titelScherm extends StaticScene{
 	private Ping ping;
 
-	public TitleScene(Ping ping){
+	public titelScherm(Ping ping){
 	    this.ping = ping;
 	}
 
@@ -23,20 +23,20 @@ public class TitleScene extends StaticScene{
 	@Override
 	public void setupScene(){
 //	    setBackgroundAudio("audio/ocean.mp3");
-	    setBackgroundImage("backgrounds/background1.jpg");
+	    setBackgroundImage("backgrounds/background_ping.png");
 	}
 
 	@Override
 	public void setupEntities(){
-	    var waterworldText = new TextEntity(
-	        new Coordinate2D(getWidth() / 2, getHeight() / 2),
-	        "Waterworld"
+	    var pingText = new TextEntity(
+	        new Coordinate2D(getWidth() / 2, getHeight() / 8),
+	        "Ping"
 	    );
-	    StartButton startButton = new StartButton(new Coordinate2D(getWidth()/2, (getHeight()/2) + 40), ping);
-	    waterworldText.setAnchorPoint(AnchorPoint.CENTER_CENTER);
-	    waterworldText.setFill(Color.DARKBLUE);
-	    waterworldText.setFont(Font.font("Roboto", FontWeight.SEMI_BOLD, 80));
-	    addEntity(waterworldText);
+	    StartButton startButton = new StartButton(new Coordinate2D((getWidth()/8 *2)-15, (getHeight()/6 * 4) + 40), ping);
+	    pingText.setAnchorPoint(AnchorPoint.CENTER_CENTER);
+	    pingText.setFill(Color.ORANGE);
+	    pingText.setFont(Font.font("Roboto", FontWeight.SEMI_BOLD, 80));
+	    addEntity(pingText);
 	    addEntity(startButton);
 	}
 
