@@ -2,7 +2,6 @@ package ping.scenes;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.scenes.StaticScene;
-import com.github.hanyaeger.tutorial.Waterworld;
 
 import ping.Ping;
 import ping.entities.buttons.ExitButton;

@@ -6,9 +6,11 @@ import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.userinput.KeyListener;
+import javafx.scene.Node;
 import javafx.scene.input.KeyCode;
 import ping.Ping;
 
+import java.util.Optional;
 import java.util.Set;
 
 public class Speler2 extends Speler implements KeyListener, Collided, Collider {
