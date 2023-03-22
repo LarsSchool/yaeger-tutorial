@@ -4,7 +4,6 @@ import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.scenes.StaticScene;
-import com.github.hanyaeger.tutorial.Waterworld;
 
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -12,10 +11,10 @@ import javafx.scene.text.FontWeight;
 import ping.Ping;
 import ping.entities.buttons.StartButton;
 
-public class titelScherm extends StaticScene{
+public class TitelScherm extends StaticScene{
 	private Ping ping;
 
-	public titelScherm(Ping ping){
+	public TitelScherm(Ping ping){
 	    this.ping = ping;
 	}
 

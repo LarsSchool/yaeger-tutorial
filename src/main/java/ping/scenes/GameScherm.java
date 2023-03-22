@@ -1,17 +1,16 @@
 package ping.scenes;
 
-import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.EntitySpawnerContainer;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import com.github.hanyaeger.api.scenes.TileMapContainer;
 import ping.Ping;
 
 
-public class gameScherm extends DynamicScene implements EntitySpawnerContainer, TileMapContainer {
+public class GameScherm extends DynamicScene implements EntitySpawnerContainer, TileMapContainer {
 
 	Ping ping;
 
-	public gameScherm(Ping ping) {
+	public GameScherm(Ping ping) {
 		// TODO Auto-generated constructor stub
 		this.ping = ping;
 	}
