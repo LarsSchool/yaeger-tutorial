@@ -4,24 +4,17 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.EntitySpawnerContainer;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.scenes.DynamicScene;
-import com.github.hanyaeger.api.scenes.TileMapContainer;
-import com.github.hanyaeger.tutorial.Waterworld;
-import com.github.hanyaeger.tutorial.entities.BubbleSpawner;
-import com.github.hanyaeger.tutorial.entities.Hanny;
-import com.github.hanyaeger.tutorial.entities.map.CoralTileMap;
-import com.github.hanyaeger.tutorial.entities.sharky.Sharky;
-import com.github.hanyaeger.tutorial.entities.swordfish.Swordfish;
-import com.github.hanyaeger.tutorial.entities.text.BubblesPoppedText;
-import com.github.hanyaeger.tutorial.entities.text.HealthText;
 
 import ping.Ping;
+import ping.entities.Bal;
+import ping.entities.Border;
 import ping.entities.Middenlijn;
 
-public class gameScherm extends DynamicScene implements EntitySpawnerContainer, TileMapContainer {
+public class GameScherm extends DynamicScene implements EntitySpawnerContainer {
 
 	Ping ping;
 
-	public gameScherm(Ping ping) {
+	public GameScherm(Ping ping) {
 		// TODO Auto-generated constructor stub
 		this.ping = ping;
 	}
@@ -35,10 +28,16 @@ public class gameScherm extends DynamicScene implements EntitySpawnerContainer, 
 
 	@Override
 	public void setupEntities() {
-		
-		Middenlijn middenlijn = new Middenlijn(new Coordinate2D(getWidth()/2 - 20 - 25, 0), new Size(40 + 50, getHeight()) , ping);
-	    addEntity(middenlijn);
-		//		HealthText HealthPoints = new HealthText(new Coordinate2D(getWidth() - 150, 10));
+		Bal bal = new Bal();
+		Middenlijn middenlijn = new Middenlijn(new Coordinate2D(getWidth() / 2 - 20 - (bal.getAantalBalTouches() * 4)/2, 0),
+				new Size(40 + bal.getAantalBalTouches() * 4, getHeight()));
+		addEntity(middenlijn);
+		Border borderBoven = new Border("sprites/border_dirt.png", new Coordinate2D(0, 0),
+				new Size(getWidth(), 20));
+		addEntity(borderBoven);
+
+		// HealthText HealthPoints = new HealthText(new Coordinate2D(getWidth() - 150,
+		// 10));
 //		addEntity(HealthPoints);
 //		var bubblesPoppedText = new BubblesPoppedText(new Coordinate2D(0, 30));
 //		addEntity(bubblesPoppedText);
@@ -57,9 +56,5 @@ public class gameScherm extends DynamicScene implements EntitySpawnerContainer, 
 //		addEntitySpawner(airSpawner);
 	}
 
-	@Override
-	public void setupTileMaps() {
-//		addTileMap(new CoralTileMap());
-	}
 
 }

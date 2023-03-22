@@ -9,7 +9,7 @@ import ping.Ping;
 
 public class Middenlijn extends DynamicRectangleEntity {
 
-	public Middenlijn(Coordinate2D initialPosition, Size size, Ping ping) {
+	public Middenlijn(Coordinate2D initialPosition, Size size) {
 		super(initialPosition, size);
 		setFill(Color.WHITE);
 	}

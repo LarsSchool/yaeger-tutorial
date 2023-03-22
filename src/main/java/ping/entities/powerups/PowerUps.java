@@ -1,5 +1,5 @@
 package ping.entities.powerups;
 
-public class abstract PowerUps {
+public abstract class  PowerUps {
     public abstract void doPowerUp();
 }

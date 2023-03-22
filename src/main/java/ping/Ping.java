@@ -2,8 +2,8 @@ package ping;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
 
-import ping.scenes.gameScherm;
-import ping.scenes.titelScherm;
+import ping.scenes.GameScherm;
+import ping.scenes.TitelScherm;
 
 public class Ping extends YaegerGame{
 
@@ -18,14 +18,14 @@ public class Ping extends YaegerGame{
 	@Override
 	public void setupGame() {
 	    setGameTitle("Ping");
-	    setSize(new Size(700, 600));
+	    setSize(new Size(1200, 750));
 	}
 
 
 	@Override
 	public void setupScenes(){
 //	    addScene(0, new titelScherm(this));
-	    addScene(1, new gameScherm(this));
+	    addScene(1, new GameScherm(this));
 	}
 	
 	public void setScene(int scene) {
