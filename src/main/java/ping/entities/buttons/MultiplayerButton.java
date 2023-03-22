@@ -20,7 +20,7 @@ public class MultiplayerButton extends TextEntity implements MouseButtonPressedL
 	private Ping ping;
 
 	public MultiplayerButton(Coordinate2D initialLocation, Ping ping){
-	    super(initialLocation,"Play Ping (definitely not Pong)");
+	    super(initialLocation,"Multiplayer");
 	    this.ping = ping;
 	    setFill(Color.GREEN);
 	    setFont(Font.font("Roboto", FontWeight.BOLD, 30));

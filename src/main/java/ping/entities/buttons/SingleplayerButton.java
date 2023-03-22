@@ -1,7 +1,5 @@
 package ping.entities.buttons;
 
-import java.util.Optional;
-
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
@@ -15,12 +13,12 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import ping.Ping;
 
-public class SingeplayerButton extends TextEntity implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener{
+public class SingleplayerButton extends TextEntity implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener{
 		
 	private Ping ping;
 
-	public SingeplayerButton(Coordinate2D initialLocation, Ping ping){
-	    super(initialLocation,"Play Ping (definitely not Pong)");
+	public SingleplayerButton(Coordinate2D initialLocation, Ping ping){
+	    super(initialLocation,"Singleplayer");
 	    this.ping = ping;
 	    setFill(Color.GREEN);
 	    setFont(Font.font("Roboto", FontWeight.BOLD, 30));
