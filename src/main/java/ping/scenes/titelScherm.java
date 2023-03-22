@@ -22,8 +22,7 @@ public class titelScherm extends StaticScene{
 	
 	@Override
 	public void setupScene(){
-//	    setBackgroundAudio("audio/ocean.mp3");
-	    setBackgroundImage("backgrounds/background_ping.png");
+
 	}
 
 	@Override
@@ -33,10 +32,15 @@ public class titelScherm extends StaticScene{
 	        "Ping"
 	    );
 	    StartButton startButton = new StartButton(new Coordinate2D((getWidth()/8 *2)-15, (getHeight()/6 * 4) + 40), ping);
+
 	    pingText.setAnchorPoint(AnchorPoint.CENTER_CENTER);
+
 	    pingText.setFill(Color.ORANGE);
+
 	    pingText.setFont(Font.font("Roboto", FontWeight.SEMI_BOLD, 80));
+
 	    addEntity(pingText);
+
 	    addEntity(startButton);
 	}
 
