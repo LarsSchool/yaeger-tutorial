@@ -15,24 +15,26 @@ import java.util.Set;
 
 public class Speler2 extends Speler implements KeyListener, Collided, Collider {
 
-    private Ping ping;
+//	private Ping ping;
 
-    public Speler2(Coordinate2D location, Ping ping) {
-        super("sprites/player_2.png", location, new Size(40, 150));
-        this.ping = ping;
-    }
+	public Speler2(Coordinate2D location, Size size) {
+		super("sprites/player_2.png", location, size);
+//		this.ping = ping;
+	}
 
-    @Override
-    public void onPressedKeysChange(Set<KeyCode> pressedKeys) {
-        if (pressedKeys.contains(KeyCode.UP)) {
-            setMotion(3, 180d);
-        } else if (pressedKeys.contains(KeyCode.DOWN)) {
-            setMotion(3, 0d);
-        }
-    }
+	@Override
+	public void onPressedKeysChange(Set<KeyCode> pressedKeys) {
+		if (pressedKeys.contains(KeyCode.UP)) {
+			setMotion(4, 180d);
+		} else if (pressedKeys.contains(KeyCode.DOWN)) {
+			setMotion(4, 0d);
+		} else {
+			setMotion(0, 0d);
+		}
+	}
 
-    @Override
-    public void onCollision(Collider collidingObject) {
+	@Override
+	public void onCollision(Collider collidingObject) {
 
-    }
+	}
 }

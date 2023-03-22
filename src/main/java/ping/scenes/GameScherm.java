@@ -9,6 +9,8 @@ import ping.Ping;
 import ping.entities.Bal;
 import ping.entities.Border;
 import ping.entities.Middenlijn;
+import ping.entities.speler.Speler1;
+import ping.entities.speler.Speler2;
 
 public class GameScherm extends DynamicScene implements EntitySpawnerContainer {
 
@@ -29,12 +31,31 @@ public class GameScherm extends DynamicScene implements EntitySpawnerContainer {
 	@Override
 	public void setupEntities() {
 		Bal bal = new Bal();
-		Middenlijn middenlijn = new Middenlijn(new Coordinate2D(getWidth() / 2 - 20 - (bal.getAantalBalTouches() * 4)/2, 0),
+		Middenlijn middenlijn = new Middenlijn(
+				new Coordinate2D(getWidth() / 2 - 20 - (bal.getAantalBalTouches() * 4) / 2, 0),
 				new Size(40 + bal.getAantalBalTouches() * 4, getHeight()));
 		addEntity(middenlijn);
-		Border borderBoven = new Border("sprites/border_dirt.png", new Coordinate2D(0, 0),
-				new Size(getWidth(), 20));
-		addEntity(borderBoven);
+
+		// SPELERS
+		Speler1 speler1 = new Speler1(new Coordinate2D(getWidth() / 20, getHeight() / 2 - 70), new Size(40, 150));
+		addEntity(speler1);
+		Speler2 speler2 = new Speler2(new Coordinate2D(getWidth() - getWidth() / 20, getHeight() / 2 - 70),
+				new Size(40, 150));
+		addEntity(speler2);
+
+		// ALLE BORDERS TOEVOEGEN
+		Border borderLinksBoven = new Border("sprites/border.png", new Coordinate2D(0, 0),
+				new Size(getWidth() / 2, 20));
+		addEntity(borderLinksBoven);
+		Border borderRechtsBoven = new Border("sprites/border.png", new Coordinate2D(getWidth() / 2, 0),
+				new Size(getWidth() / 2, 20));
+		addEntity(borderRechtsBoven);
+		Border borderLinksOnder = new Border("sprites/border.png", new Coordinate2D(0, getHeight() - 20),
+				new Size(getWidth() / 2, 20));
+		addEntity(borderLinksOnder);
+		Border borderRechtsOnder = new Border("sprites/border.png", new Coordinate2D(getWidth() / 2, getHeight() - 20),
+				new Size(getWidth() / 2, 20));
+		addEntity(borderRechtsOnder);
 
 		// HealthText HealthPoints = new HealthText(new Coordinate2D(getWidth() - 150,
 		// 10));
@@ -55,6 +76,5 @@ public class GameScherm extends DynamicScene implements EntitySpawnerContainer {
 //		BubbleSpawner airSpawner = new BubbleSpawner(getWidth(), getHeight());
 //		addEntitySpawner(airSpawner);
 	}
-
 
 }

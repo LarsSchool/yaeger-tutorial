@@ -6,7 +6,7 @@ import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 
 public abstract class  Speler extends DynamicSpriteEntity{
 
-	protected Speler(String resource, Coordinate2D initialLocation, Size size) {
+	public Speler(String resource, Coordinate2D initialLocation, Size size) {
 		super(resource, initialLocation, size);
 		// TODO Auto-generated constructor stub
 	}

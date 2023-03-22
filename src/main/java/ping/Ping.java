@@ -24,8 +24,7 @@ public class Ping extends YaegerGame{
 
 	@Override
 	public void setupScenes(){
-//	    addScene(0, new titelScherm(this));
-	    addScene(0, new TitelScherm(this));
+//	    addScene(0, new TitelScherm(this));
 	    addScene(1, new GameScherm(this));
 	}
 	

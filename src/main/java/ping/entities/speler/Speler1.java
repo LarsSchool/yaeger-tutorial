@@ -16,24 +16,29 @@ import javafx.scene.input.KeyCode;
 import ping.Ping;
 
 public class Speler1 extends Speler implements KeyListener, Collided, Collider {
-	private Ping ping;
+//	private Ping ping;
+	private Coordinate2D location;
 
-	public Speler1(Coordinate2D location, Ping ping) {
-		super("sprites/player_1.png", location, new Size(40, 150));
-		this.ping = ping;
+	public Speler1(Coordinate2D location, Size size) {
+		super("sprites/player_1.png", location, size);
+//		this.ping = ping;
+		this.location = location;
 	}
 
 	@Override
-	public void onPressedKeysChange(Set<KeyCode> pressedKeys) {
-		if (pressedKeys.contains(KeyCode.UP)) {
-			setMotion(3, 180d);
-		} else if (pressedKeys.contains(KeyCode.DOWN)) {
-			setMotion(3, 0d);
+	public void onPressedKeysChange(Set<KeyCode> pressedKeys) {    	
+        if (pressedKeys.contains(KeyCode.W)) {
+            setMotion(3, 180d);
+        } else if (pressedKeys.contains(KeyCode.S)) {
+            setMotion(3, 0d);
+        } else {
+			setMotion(0,0d);
+			}
 		}
-	}
 
+	//TO DO---------------------------------------------------------------------------------------------
 	@Override
 	public void onCollision(Collider collidingObject) {
-
+		setMotion(0,0d);
 	}
 }
