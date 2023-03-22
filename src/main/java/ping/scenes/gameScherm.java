@@ -6,11 +6,12 @@ import com.github.hanyaeger.api.scenes.DynamicScene;
 import com.github.hanyaeger.api.scenes.TileMapContainer;
 import ping.Ping;
 
-public class GameLevel extends DynamicScene implements EntitySpawnerContainer, TileMapContainer {
+
+public class gameScherm extends DynamicScene implements EntitySpawnerContainer, TileMapContainer {
 
 	Ping ping;
 
-	public GameLevel(Ping ping) {
+	public gameScherm(Ping ping) {
 		// TODO Auto-generated constructor stub
 		this.ping = ping;
 	}

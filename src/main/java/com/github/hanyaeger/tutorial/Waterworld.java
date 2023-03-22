@@ -3,7 +3,7 @@ package com.github.hanyaeger.tutorial;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
 
-import ping.scenes.GameLevel;
+import ping.scenes.gameScherm;
 import ping.scenes.GameOver;
 //import ping.scenes.TitleScene;
 
@@ -27,7 +27,7 @@ public class Waterworld extends YaegerGame{
 	@Override
 	public void setupScenes(){
 //	    addScene(0, new TitleScene(this));
-	    addScene(1, new GameLevel(this));
+	    addScene(1, new gameScherm(this));
 	    addScene(2, new GameOver(this));
 	}
 
