@@ -10,5 +10,5 @@ public abstract class  Speler extends DynamicSpriteEntity{
 		super(resource, initialLocation, size);
 		// TODO Auto-generated constructor stub
 	}
-        
+       
 }
