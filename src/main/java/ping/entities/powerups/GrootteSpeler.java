@@ -24,8 +24,4 @@ public class GrootteSpeler extends PowerUps{
     public int getSnelheidBal(){
         return snelheidBal;
     }
-
-    public Color getKleur(){
-        return Color.PURPLE;
-    }
 }

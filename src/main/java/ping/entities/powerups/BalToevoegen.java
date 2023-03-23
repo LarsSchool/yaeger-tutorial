@@ -19,8 +19,4 @@ public class BalToevoegen extends PowerUps{
     public int getAantalBallen(){
         return aantalBallen;
     }
-
-    public Color getKleur(){
-        return Color.RED;
-    }
 }

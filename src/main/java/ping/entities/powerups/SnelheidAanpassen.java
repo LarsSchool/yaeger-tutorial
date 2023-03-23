@@ -26,8 +26,4 @@ public class SnelheidAanpassen extends PowerUps {
     public int getSnelheidBal(){
         return snelheidBal;
     }
-
-    public Color getKleur(){
-        return Color.GREEN;
-    }
 }
