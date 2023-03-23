@@ -36,8 +36,18 @@ public class Speler2 extends Speler implements KeyListener, Collided, Collider {
 
 	@Override
 	public void onCollision(Collider collidingObject) {
-		if(collidingObject instanceof Border) {
-		setMotion(0 , 180d);
+		if (collidingObject instanceof Border) {
+			if (this.getDirection() == 0) {
+				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX(),
+						this.getAnchorLocation().getY() - 2);
+				setAnchorLocation(locatie);
+				setMotion(0, 0d);
+			} else if (this.getDirection() == 180) {
+				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX(),
+						this.getAnchorLocation().getY() + 2);
+				setAnchorLocation(locatie);
+				setMotion(0, 180d);
+			}
 		}
 	}
 }
