@@ -1,10 +1,6 @@
 package ping.entities.powerups;
 
-
-
 import com.github.hanyaeger.api.Coordinate2D;
-import javafx.scene.paint.Color;
-
 import java.util.Random;
 
 public class SnelheidAanpassen extends PowerUps {

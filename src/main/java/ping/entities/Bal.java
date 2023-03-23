@@ -7,8 +7,6 @@ import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
-
-import ping.entities.powerups.SnelheidAanpassen;
 import ping.entities.speler.Speler;
 
 public class Bal extends DynamicSpriteEntity implements Collided {

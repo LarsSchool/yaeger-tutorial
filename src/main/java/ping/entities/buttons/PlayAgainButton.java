@@ -13,7 +13,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
-public class PlayAgainButton extends TextEntity implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener{
+public class PlayAgainButton extends TextEntity
+		implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener{
 	
 	private Ping ping;
 

@@ -38,10 +38,5 @@ public abstract class  PowerUps extends DynamicCircleEntity implements Collided 
         }
     }
 
-    @Override
-    public void setupEntities() {
-        addEntity(powerUp);
-    }
-
     public abstract void doPowerUp();
 }

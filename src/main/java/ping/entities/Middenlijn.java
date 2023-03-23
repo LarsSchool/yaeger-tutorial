@@ -5,7 +5,6 @@ import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.impl.DynamicRectangleEntity;
 
 import javafx.scene.paint.Color;
-import ping.Ping;
 
 public class Middenlijn extends DynamicRectangleEntity {
 

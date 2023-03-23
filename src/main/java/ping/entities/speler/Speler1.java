@@ -7,7 +7,6 @@ import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.userinput.KeyListener;
-
 import javafx.scene.input.KeyCode;
 import ping.entities.Border;
 
@@ -32,8 +31,6 @@ public class Speler1 extends Speler implements KeyListener, Collided, Collider {
 		}
 	}
 
-	// TO
-	// DO---------------------------------------------------------------------------------------------
 	@Override
 	public void onCollision(Collider collidingObject) {
 		if (collidingObject instanceof Border) {
@@ -47,10 +44,7 @@ public class Speler1 extends Speler implements KeyListener, Collided, Collider {
 						this.getAnchorLocation().getY() + 2);
 				setAnchorLocation(locatie);
 				setMotion(0, 180d);
-
 			}
 		}
-
 	}
-
 }

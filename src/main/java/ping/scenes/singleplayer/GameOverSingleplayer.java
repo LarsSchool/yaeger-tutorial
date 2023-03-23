@@ -11,22 +11,21 @@ import ping.entities.buttons.PlayAgainButton;
 public class GameOverSingleplayer extends StaticScene{
 	Ping ping;
 	public GameOverSingleplayer(Ping ping) {
-		// TODO Auto-generated constructor stub
 		this.ping = ping;
 	}
 
 	@Override
 	public void setupScene() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void setupEntities() {
-	    PlayAgainButton playAgainButton = new PlayAgainButton(new Coordinate2D(getWidth()/2 - 140 , (getHeight()/2 - 60)), ping);
-	    addEntity(playAgainButton);
+	    PlayAgainButton playAgainButton =
+				new PlayAgainButton(new Coordinate2D(getWidth()/2 - 140 , (getHeight()/2 - 60)), ping);
+	    	addEntity(playAgainButton);
 	    ExitButton exitButton = new ExitButton(new Coordinate2D(getWidth()/2 + 50, (getHeight()/2) + 40), ping);
-	    addEntity(exitButton);
+	    	addEntity(exitButton);
 	}
 	
 	
