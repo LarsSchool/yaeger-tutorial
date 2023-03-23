@@ -120,9 +120,16 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 	public void notifyBoundaryTouching(SceneBorder border) {
 		switch (border) {
 		case LEFT:
+			setAnchorLocation(location);
+			richting = getStartRichting();
+			setAantalBalTouches(0);
+//			puntenSpeler2++;
 			break;
 		case RIGHT:
-			
+			setAnchorLocation(location);
+			richting = getStartRichting();
+			setAantalBalTouches(0);
+//			puntenSpeler1++
 			break;
 		default:
 			break;
