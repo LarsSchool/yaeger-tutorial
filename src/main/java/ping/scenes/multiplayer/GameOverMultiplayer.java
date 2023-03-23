@@ -11,13 +11,11 @@ import ping.entities.buttons.PlayAgainButton;
 public class GameOverMultiplayer extends StaticScene{
 	Ping ping;
 	public GameOverMultiplayer(Ping ping) {
-		// TODO Auto-generated constructor stub
 		this.ping = ping;
 	}
 
 	@Override
 	public void setupScene() {
-		// TODO Auto-generated method stub
 
 	}
 

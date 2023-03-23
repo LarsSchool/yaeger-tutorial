@@ -31,10 +31,11 @@ public class TitelScherm extends StaticScene{
 	        new Coordinate2D(getWidth() / 2, getHeight() / 8),
 	        "Ping"
 	    );
-	    SingleplayerButton singleplayerButton = new SingleplayerButton(new Coordinate2D((getWidth()/8 * 3) + 50, (getHeight()/6 * 4) + 40), ping);
+	    SingleplayerButton singleplayerButton =
+				new SingleplayerButton(new Coordinate2D((getWidth()/8 * 3) + 50, (getHeight()/6 * 4) + 40), ping);
 
-		MultiplayerButton multiplayerButton = new MultiplayerButton(new Coordinate2D((getWidth()/8 * 3) + 50, (getHeight()/6 * 4) + 100), ping);
-
+		MultiplayerButton multiplayerButton =
+				new MultiplayerButton(new Coordinate2D((getWidth()/8 * 3) + 50, (getHeight()/6 * 4) + 100), ping);
 
 		pingText.setAnchorPoint(AnchorPoint.CENTER_CENTER);
 

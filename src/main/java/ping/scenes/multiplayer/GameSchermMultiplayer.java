@@ -21,14 +21,11 @@ public class GameSchermMultiplayer extends DynamicScene implements EntitySpawner
 	Ping ping;
 
 	public GameSchermMultiplayer(Ping ping) {
-		// TODO Auto-generated constructor stub
 		this.ping = ping;
 	}
 
 	@Override
 	public void setupScene() {
-		// TODO Auto-generated method stub
-//		setBackgroundAudio("audio/waterworld.mp3");
 		setBackgroundImage("backgrounds/background_ping.png");
 	}
 

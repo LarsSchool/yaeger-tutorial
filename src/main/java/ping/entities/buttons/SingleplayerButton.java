@@ -13,7 +13,8 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import ping.Ping;
 
-public class SingleplayerButton extends TextEntity implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener{
+public class SingleplayerButton extends TextEntity
+		implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener{
 		
 	private Ping ping;
 

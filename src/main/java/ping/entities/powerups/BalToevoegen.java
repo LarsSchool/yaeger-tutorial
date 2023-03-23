@@ -2,7 +2,6 @@ package ping.entities.powerups;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
-import javafx.scene.paint.Color;
 
 
 public class BalToevoegen extends PowerUp{

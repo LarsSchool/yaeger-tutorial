@@ -36,10 +36,7 @@ public class Ping extends YaegerGame{
 	    addScene(4, new GameOverSingleplayer(this));
 
 	}
-	
-//	public void setScene(int scene) {
-//		setActiveScene(scene);
-//	}
+
 	
 	public void setSpelerAantal(int waarde) {
 		spelerAantal = waarde;
