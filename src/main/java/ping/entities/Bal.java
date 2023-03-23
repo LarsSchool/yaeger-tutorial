@@ -13,7 +13,7 @@ import ping.entities.speler.Speler;
 
 public class Bal extends DynamicSpriteEntity implements Collided {
 
-	private int aantalBalTouches = 0;
+	private static int aantalBalTouches = 0;
 	private double richting;
 	private Random rand = new Random();
 	private Coordinate2D location;
@@ -46,26 +46,37 @@ public class Bal extends DynamicSpriteEntity implements Collided {
 		}
 	}
 
-	public int getAantalBalTouches() {
+	public static int getAantalBalTouches() {
 		return aantalBalTouches;
 	}
 
 	public void setAantalBalTouches(int aantalBalTouches) {
-		this.aantalBalTouches = aantalBalTouches;
+		Bal.aantalBalTouches = aantalBalTouches;
 	}
 
 	@Override
 	public void onCollision(Collider collidingObject) {
 		aantalBalTouches++;
 		if (collidingObject instanceof Border) {
-			richting += 45 + getAfwijking(5);
+			richting += 45 + getAfwijking(3);
 			if (richting > 359) {
 				richting -= 360;
 			}
 			setMotion(5, richting);
-		} else if (collidingObject instanceof Speler) {
+		} else if(collidingObject instanceof SingleplayerMuur){
+			richting += 45 + getAfwijking(2);
+			if (richting > 359) {
+				richting -= 360;
+			}
+			setMotion(5, richting);
+			}
+		else if (collidingObject instanceof Speler) {
 			if(richting > 90 && richting < 270) {
-				
+				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX()- 5, this.getAnchorLocation().getY());
+				setAnchorLocation(locatie);
+			} else {
+				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX() + 5, this.getAnchorLocation().getY());
+				setAnchorLocation(locatie);
 			}
 			if ((richting > 45 && richting < 135) || (richting > 225 && richting < 315)) {
 				richting += 180 + getAfwijking(40);
@@ -78,5 +89,4 @@ public class Bal extends DynamicSpriteEntity implements Collided {
 			setMotion(5, richting);
 		}
 	}
-
 }

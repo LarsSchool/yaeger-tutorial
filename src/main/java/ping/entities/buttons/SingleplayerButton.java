@@ -26,7 +26,8 @@ public class SingleplayerButton extends TextEntity implements MouseButtonPressed
 
 	@Override
 	public void onMouseButtonPressed(MouseButton button, Coordinate2D coordinate2D){
-	    ping.setActiveScene(1);
+	    ping.setActiveScene(3);
+	    ping.setSpelerAantal(1);
 	}
 
 	@Override

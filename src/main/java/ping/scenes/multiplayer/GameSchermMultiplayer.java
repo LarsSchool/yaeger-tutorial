@@ -9,6 +9,7 @@ import ping.Ping;
 import ping.entities.Bal;
 import ping.entities.Border;
 import ping.entities.Middenlijn;
+import ping.entities.speler.Speler;
 import ping.entities.speler.Speler1;
 import ping.entities.speler.Speler2;
 
@@ -39,9 +40,9 @@ public class GameSchermMultiplayer extends DynamicScene implements EntitySpawner
 		addEntity(middenlijn);
 
 		// SPELERS
-		Speler1 speler1 = new Speler1(new Coordinate2D(getWidth() / 20 - 30, getHeight() / 2 - 70), new Size(40, 150));
+		Speler speler1 = new Speler1(new Coordinate2D(getWidth() / 20 - 30, getHeight() / 2 - 70), new Size(40, 150));
 		addEntity(speler1);
-		Speler2 speler2 = new Speler2(new Coordinate2D(getWidth() - getWidth() / 20 - 10, getHeight() / 2 - 70),
+		Speler speler2 = new Speler2(new Coordinate2D(getWidth() - getWidth() / 20 - 10, getHeight() / 2 - 70),
 				new Size(40, 150));
 		addEntity(speler2);
 

@@ -29,6 +29,7 @@ public class MultiplayerButton extends TextEntity implements MouseButtonPressedL
 	@Override
 	public void onMouseButtonPressed(MouseButton button, Coordinate2D coordinate2D){
 	    ping.setActiveScene(1);
+	    ping.setSpelerAantal(2);
 	}
 
 	@Override
