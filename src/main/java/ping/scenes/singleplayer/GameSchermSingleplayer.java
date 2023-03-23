@@ -9,6 +9,8 @@ import ping.Ping;
 import ping.entities.Bal;
 import ping.entities.Border;
 import ping.entities.Middenlijn;
+import ping.entities.SingleplayerMuur;
+import ping.entities.speler.Speler;
 import ping.entities.speler.Speler1;
 import ping.entities.speler.Speler2;
 
@@ -33,17 +35,15 @@ public class GameSchermSingleplayer extends DynamicScene implements EntitySpawne
 		Bal bal = new Bal("sprites/bal.png", new Coordinate2D(getWidth()/2 - (30/2), getHeight()/2 - (30/2)), new Size(30,30));
 		addEntity(bal);
 
-		Middenlijn middenlijn = new Middenlijn(
-				new Coordinate2D(getWidth() / 2 - 20 - (bal.getAantalBalTouches() * 4) / 2, 0),
-				new Size(40 + bal.getAantalBalTouches() * 4, getHeight()));
-		addEntity(middenlijn);
+		SingleplayerMuur muur = new SingleplayerMuur(
+				new Coordinate2D(0, 0),
+				new Size(40, getHeight()));
+		addEntity(muur);
 
 		// SPELERS
-		Speler1 speler1 = new Speler1(new Coordinate2D(getWidth() / 20 - 30, getHeight() / 2 - 70), new Size(40, 150));
-		addEntity(speler1);
-		Speler2 speler2 = new Speler2(new Coordinate2D(getWidth() - getWidth() / 20 - 10, getHeight() / 2 - 70),
+		Speler speler1 = new Speler1(new Coordinate2D(getWidth() - getWidth() / 20 - 10, getHeight() / 2 - 70),
 				new Size(40, 150));
-		addEntity(speler2);
+		addEntity(speler1);
 
 		// ALLE BORDERS TOEVOEGEN
 		Border borderLinksBoven = new Border("sprites/border.png", new Coordinate2D(0, 0),

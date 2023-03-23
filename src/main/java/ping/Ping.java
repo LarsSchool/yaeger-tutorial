@@ -9,6 +9,8 @@ import ping.scenes.singleplayer.GameOverSingleplayer;
 import ping.scenes.singleplayer.GameSchermSingleplayer;
 
 public class Ping extends YaegerGame{
+	
+	private int spelerAantal;
 
 	public Ping() {
 		
@@ -35,7 +37,15 @@ public class Ping extends YaegerGame{
 
 	}
 	
-	public void setScene(int scene) {
-		setActiveScene(scene);
+//	public void setScene(int scene) {
+//		setActiveScene(scene);
+//	}
+	
+	public void setSpelerAantal(int waarde) {
+		spelerAantal = waarde;
+	}
+	
+	public int getSpelerAantal() {
+		return spelerAantal;
 	}
 }

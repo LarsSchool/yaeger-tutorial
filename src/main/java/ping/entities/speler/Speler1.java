@@ -10,6 +10,7 @@ import com.github.hanyaeger.api.userinput.KeyListener;
 
 
 import javafx.scene.input.KeyCode;
+import ping.entities.Border;
 
 public class Speler1 extends Speler implements KeyListener, Collided, Collider {
 	private Coordinate2D location;
@@ -36,6 +37,14 @@ public class Speler1 extends Speler implements KeyListener, Collided, Collider {
 	@Override
 	public void onCollision(Collider collidingObject) {
 		setMotion(0,0d);
+		if(collidingObject instanceof Border) {
+			Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX()- 5, this.getAnchorLocation().getY());
+			setAnchorLocation(locatie);
+		} else {
+			Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX() + 5, this.getAnchorLocation().getY());
+			setAnchorLocation(locatie);
+		}
+		
 	}
 
 }
