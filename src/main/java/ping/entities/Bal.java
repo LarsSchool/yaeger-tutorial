@@ -27,7 +27,7 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 	public Bal(String resource, Coordinate2D initialLocation, Size size) {
 		super(resource, initialLocation, size);
 		richting = getStartRichting();
-		setMotion(4, richting);
+		setMotion(5, richting);
 		this.location = initialLocation;
 	}
 
@@ -62,7 +62,6 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 
 	@Override
 	public void onCollision(Collider collidingObject) {
-		System.out.println(richting);
 		if (collidingObject instanceof Border) {
 //			if(richting > 270 && richting < 90) {
 //				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX(), this.getAnchorLocation().getY() - 5);
@@ -131,8 +130,8 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 			setAantalBalTouches(0);
 //			puntenSpeler1++
 			break;
-		default:
-			break;
+//		default:
+//			break;
 		}
 	}
 }

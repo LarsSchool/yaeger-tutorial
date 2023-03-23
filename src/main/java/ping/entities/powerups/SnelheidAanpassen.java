@@ -10,7 +10,7 @@ import javafx.scene.paint.Color;
 import java.util.Random;
 
 public class SnelheidAanpassen extends PowerUp {
-    public int snelheidBal;
+    public int snelheidBal = 4;
 	Random rand = new Random();
 
     public SnelheidAanpassen(String resource, Coordinate2D initialLocation, Size size) {

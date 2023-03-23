@@ -12,13 +12,10 @@ import ping.Ping;
 import ping.entities.Border;
 
 public class Speler1 extends Speler implements KeyListener, Collided, Collider {
-	private Coordinate2D location;
-	private Size size;
+	private static boolean inverted = false;
 
 	public Speler1(Coordinate2D location, Size size) {
 		super("sprites/player_1.png", location, size);
-		this.location = location;
-		this.size = size;
 	}
 
 	@Override
@@ -35,7 +32,7 @@ public class Speler1 extends Speler implements KeyListener, Collided, Collider {
 			} else {
 				setSpeed(0);
 			}
-		} else if (Ping.getSpelerAantal() == 2) {
+		} else if (Ping.getSpelerAantal() == 2 && !inverted) {
 			if (pressedKeys.contains(KeyCode.W)) {
 				setMotion(4, 180d);
 			} else if (pressedKeys.contains(KeyCode.S)) {
@@ -43,6 +40,22 @@ public class Speler1 extends Speler implements KeyListener, Collided, Collider {
 			} else {
 				setSpeed(0);
 			}
+		} else if(Ping.getSpelerAantal() == 2 && inverted) {
+			if (pressedKeys.contains(KeyCode.S)) {
+				setMotion(4, 180d);
+			} else if (pressedKeys.contains(KeyCode.W)) {
+				setMotion(4, 0d);
+			} else {
+				setSpeed(0);
+			}
+		}
+	}
+	
+	public static void invert() {
+		if(inverted) {
+			inverted = false;
+		} else {
+			inverted = true;
 		}
 	}
 

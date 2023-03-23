@@ -22,29 +22,29 @@ public class PowerUpSpawner extends EntitySpawner {
 
 	@Override
 	public void spawnEntities() {
-		System.out.println(Bal.getAantalBalTouches());
-		if(Bal.getAantalBalTouches() % 5 == 0 && !powerUpGeplaatst) {
+		if(Bal.getAantalBalTouches() % 5 == 0 && !powerUpGeplaatst && Bal.getAantalBalTouches() != 0) {
 			powerUpGeplaatst = true;
 			Random rand = new Random();
 			int random = rand.nextInt(4);
 			int x = rand.nextInt(400) + 400;
 			int y = rand.nextInt(234) + 233;
+			spawn(new Inverter("sprites/powerUp-blauw.png", new Coordinate2D(x, y), new Size(50,50)));
 
 			
-			switch(random) {
-			case 0:
-			spawn(new GrootteSpeler("sprites/powerUp-paars.png", new Coordinate2D(x, y), new Size(50,50)));
-			break;
-			case 1:
-			spawn(new SnelheidAanpassen("sprites/powerUp-groen.png", new Coordinate2D(x, y), new Size(50,50)));
-			break;
-			case 2:
-			spawn(new Inverter("sprites/powerUp-blauw.png", new Coordinate2D(x, y), new Size(50,50)));
-			break;
-			case 3:
-			spawn(new BalToevoegen("sprites/powerUp-rood.png", new Coordinate2D(x, y), new Size(50,50)));
-			break;
-		}
+//			switch(random) {
+//			case 0:
+//			spawn(new GrootteSpeler("sprites/powerUp-paars.png", new Coordinate2D(x, y), new Size(50,50)));
+//			break;
+//			case 1:
+//			spawn(new SnelheidAanpassen("sprites/powerUp-groen.png", new Coordinate2D(x, y), new Size(50,50)));
+//			break;
+//			case 2:
+//			spawn(new Inverter("sprites/powerUp-blauw.png", new Coordinate2D(x, y), new Size(50,50)));
+//			break;
+//			case 3:
+//			spawn(new BalToevoegen("sprites/powerUp-rood.png", new Coordinate2D(x, y), new Size(50,50)));
+//			break;
+//		}
 	  } else if(Bal.getAantalBalTouches() % 5 == 1) {
 		  powerUpGeplaatst = false;
 	  }

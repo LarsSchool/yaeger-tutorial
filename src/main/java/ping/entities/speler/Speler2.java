@@ -6,10 +6,12 @@ import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.userinput.KeyListener;
 import javafx.scene.input.KeyCode;
+import ping.Ping;
 import ping.entities.Border;
 import java.util.Set;
 
 public class Speler2 extends Speler implements KeyListener, Collided, Collider {
+	private static boolean inverted = false;
 
 	// constructor van speler 2
 	public Speler2(Coordinate2D location, Size size) {
@@ -19,12 +21,30 @@ public class Speler2 extends Speler implements KeyListener, Collided, Collider {
 	@Override
 	public void onPressedKeysChange(Set<KeyCode> pressedKeys) {
 		// zorgt voor beweging speler 2 met de pijltjes
-		if (pressedKeys.contains(KeyCode.UP)) {
-			setMotion(4, 180d);
-		} else if (pressedKeys.contains(KeyCode.DOWN)) {
-			setMotion(4, 0d);
+		if (Ping.getSpelerAantal() == 2 && !inverted) {
+			if (pressedKeys.contains(KeyCode.UP)) {
+				setMotion(4, 180d);
+			} else if (pressedKeys.contains(KeyCode.DOWN)) {
+				setMotion(4, 0d);
+			} else {
+				setSpeed(0);
+			}
+		} else if (Ping.getSpelerAantal() == 2 && inverted) {
+			if (pressedKeys.contains(KeyCode.DOWN)) {
+				setMotion(4, 180d);
+			} else if (pressedKeys.contains(KeyCode.UP)) {
+				setMotion(4, 0d);
+			} else {
+				setSpeed(0);
+			}
+		} 
+	}
+
+	public static void invert() {
+		if (inverted) {
+			inverted = false;
 		} else {
-			setSpeed(0);
+			inverted = true;
 		}
 	}
 
