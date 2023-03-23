@@ -9,6 +9,7 @@ import com.github.hanyaeger.api.userinput.KeyListener;
 import javafx.scene.Node;
 import javafx.scene.input.KeyCode;
 import ping.Ping;
+import ping.entities.Border;
 
 import java.util.Optional;
 import java.util.Set;
@@ -35,6 +36,8 @@ public class Speler2 extends Speler implements KeyListener, Collided, Collider {
 
 	@Override
 	public void onCollision(Collider collidingObject) {
-
+		if(collidingObject instanceof Border) {
+		setMotion(0 , 180d);
+		}
 	}
 }

@@ -30,7 +30,9 @@ public class GameScherm extends DynamicScene implements EntitySpawnerContainer {
 
 	@Override
 	public void setupEntities() {
-		Bal bal = new Bal();
+		Bal bal = new Bal("sprites/bal.png", new Coordinate2D(getWidth()/2 - (30/2), getHeight()/2 - (30/2)), new Size(30,30));
+		addEntity(bal);
+
 		Middenlijn middenlijn = new Middenlijn(
 				new Coordinate2D(getWidth() / 2 - 20 - (bal.getAantalBalTouches() * 4) / 2, 0),
 				new Size(40 + bal.getAantalBalTouches() * 4, getHeight()));
