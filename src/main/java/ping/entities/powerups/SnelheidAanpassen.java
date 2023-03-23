@@ -18,14 +18,16 @@ public class SnelheidAanpassen extends PowerUps {
     public void doPowerUp(){
         Random rand = new Random();
         int nieuweSnelheid = rand.nextInt( 2,7);
-        if(nieuweSnelheid > 7 && nieuweSnelheid < 2 && snelheidBal == nieuweSnelheid){
-            snelheidBal = nieuweSnelheid;
-        }else{
-            setFill(Color.GREEN);
+        while(nieuweSnelheid > 7 || nieuweSnelheid < 2 || snelheidBal == nieuweSnelheid){
+            nieuweSnelheid = rand.nextInt( 2,7);
         }
     }
 
     public int getSnelheidBal(){
         return snelheidBal;
+    }
+
+    public Color getKleur(){
+        return Color.GREEN;
     }
 }

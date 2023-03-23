@@ -1,18 +1,26 @@
 package ping.entities.powerups;
 
 import com.github.hanyaeger.api.Coordinate2D;
-import com.github.hanyaeger.api.entities.Collider;
+import javafx.scene.paint.Color;
 
-import java.util.Random;
 
-public class BalToevoegen {
-    public int powerUpRandom;
-//    public PowerUps(Coordinate2D initialLocation) {
-//        super(initialLocation);
-//    }
+public class BalToevoegen extends PowerUps{
+    public int aantalBallen;
 
+    public BalToevoegen(Coordinate2D initialLocation) {
+        super(initialLocation);
+        aantalBallen = 1;
+    }
 
     public void doPowerUp(){
+        aantalBallen++;
+    }
 
+    public int getAantalBallen(){
+        return aantalBallen;
+    }
+
+    public Color getKleur(){
+        return Color.RED;
     }
 }
