@@ -58,6 +58,18 @@ public class Bal extends DynamicSpriteEntity implements Collided {
 	public void onCollision(Collider collidingObject) {
 		aantalBalTouches++;
 		if (collidingObject instanceof Border) {
+//			if (richting > 90 && richting < 270) {
+//				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX(),
+//						this.getAnchorLocation().getY() + 2);
+//				setAnchorLocation(locatie);
+//				setMotion(0, 0d);
+//			} else if (richting >= 270 && richting <= 90) {
+//				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX(),
+//						this.getAnchorLocation().getY() - 2);
+//				setAnchorLocation(locatie);
+//				setMotion(0, 180d);
+//			}
+
 			richting += 45 + getAfwijking(3);
 			if (richting > 359) {
 				richting -= 360;
