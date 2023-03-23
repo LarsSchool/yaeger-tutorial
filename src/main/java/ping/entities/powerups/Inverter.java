@@ -14,7 +14,6 @@ import java.util.Set;
 
 public class Inverter extends PowerUp implements KeyListener, Collided {
 	public int invert;
-	Random rand = new Random();
 
 	public Inverter(String resource, Coordinate2D initialLocation, Size size) {
 		super(resource, initialLocation, size);
@@ -47,7 +46,7 @@ public class Inverter extends PowerUp implements KeyListener, Collided {
 
 	@Override
 	public void setMotionPowerUp() {
-		int random = rand.nextInt(2);
+		int random = getRandom(2);
 		if (random == 0) {
 			setMotion(1, 90d);
 		} else {

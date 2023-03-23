@@ -1,5 +1,7 @@
 package ping.entities.powerups;
 
+import java.util.Random;
+
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Collided;
@@ -13,6 +15,8 @@ public abstract class  PowerUp extends DynamicSpriteEntity implements Collided {
     public int powerUpRandom;
     public int aantalBalTouches;
     
+    private Random rand = new Random();
+    
     public PowerUp(String resource, Coordinate2D initialLocation, Size size) {
         super(resource, initialLocation, size);
         aantalBalTouches = Bal.getAantalBalTouches();
@@ -22,7 +26,10 @@ public abstract class  PowerUp extends DynamicSpriteEntity implements Collided {
     public void onCollision(Collider collidingObject) {
     	doPowerUp();
     }
-
+    
+    public int getRandom(int waarde) {
+		return rand.nextInt(waarde);
+    }
 
     public abstract void doPowerUp();
     

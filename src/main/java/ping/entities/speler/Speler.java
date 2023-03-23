@@ -13,6 +13,10 @@ public abstract class  Speler extends DynamicSpriteEntity{
 		this.size = size;
 	}
 	
+	public void setHeight() {
+		
+	}
+	
 	public double getHeight(){
 		return size.height();
 	}
