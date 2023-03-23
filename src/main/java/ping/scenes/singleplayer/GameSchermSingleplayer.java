@@ -1,4 +1,4 @@
-package ping.scenes;
+package ping.scenes.singleplayer;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.EntitySpawnerContainer;
@@ -12,11 +12,11 @@ import ping.entities.Middenlijn;
 import ping.entities.speler.Speler1;
 import ping.entities.speler.Speler2;
 
-public class GameScherm extends DynamicScene implements EntitySpawnerContainer {
+public class GameSchermSingleplayer extends DynamicScene implements EntitySpawnerContainer {
 
 	Ping ping;
 
-	public GameScherm(Ping ping) {
+	public GameSchermSingleplayer(Ping ping) {
 		// TODO Auto-generated constructor stub
 		this.ping = ping;
 	}
@@ -39,9 +39,9 @@ public class GameScherm extends DynamicScene implements EntitySpawnerContainer {
 		addEntity(middenlijn);
 
 		// SPELERS
-		Speler1 speler1 = new Speler1(new Coordinate2D(getWidth() / 20, getHeight() / 2 - 70), new Size(40, 150));
+		Speler1 speler1 = new Speler1(new Coordinate2D(getWidth() / 20 - 30, getHeight() / 2 - 70), new Size(40, 150));
 		addEntity(speler1);
-		Speler2 speler2 = new Speler2(new Coordinate2D(getWidth() - getWidth() / 20, getHeight() / 2 - 70),
+		Speler2 speler2 = new Speler2(new Coordinate2D(getWidth() - getWidth() / 20 - 10, getHeight() / 2 - 70),
 				new Size(40, 150));
 		addEntity(speler2);
 

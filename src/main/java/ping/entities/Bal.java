@@ -1,6 +1,5 @@
 package ping.entities;
 
-import java.util.Optional;
 import java.util.Random;
 
 import com.github.hanyaeger.api.Coordinate2D;
@@ -9,7 +8,6 @@ import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 
-import javafx.scene.Node;
 import ping.entities.speler.Speler;
 
 public class Bal extends DynamicSpriteEntity implements Collided {
@@ -17,11 +15,13 @@ public class Bal extends DynamicSpriteEntity implements Collided {
 	private int aantalBalTouches = 0;
 	private double richting;
 	private Random rand = new Random();
+	private Coordinate2D location;
 
 	public Bal(String resource, Coordinate2D initialLocation, Size size) {
 		super(resource, initialLocation, size);
 		richting = getStartRichting();
 		setMotion(4, richting);
+		this.location = initialLocation;
 	}
 
 	public double getStartRichting() {
@@ -57,16 +57,19 @@ public class Bal extends DynamicSpriteEntity implements Collided {
 	public void onCollision(Collider collidingObject) {
 		aantalBalTouches++;
 		if (collidingObject instanceof Border) {
-			richting += 90 + getAfwijking(5);
+			richting += 45 + getAfwijking(5);
 			if (richting > 359) {
 				richting -= 360;
 			}
 			setMotion(5, richting);
 		} else if (collidingObject instanceof Speler) {
+			if(richting > 90 && richting < 270) {
+				
+			}
 			if ((richting > 45 && richting < 135) || (richting > 225 && richting < 315)) {
-				richting += 180 + getAfwijking(30);
+				richting += 180 + getAfwijking(40);
 			} else {
-				richting += 90 + getAfwijking(30);
+				richting += 90 + getAfwijking(40);
 			}
 			if (richting > 359) {
 				richting -= 360;

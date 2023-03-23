@@ -1,4 +1,4 @@
-package ping.scenes;
+package ping.scenes.multiplayer;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.scenes.StaticScene;
@@ -8,9 +8,9 @@ import ping.entities.buttons.ExitButton;
 import ping.entities.buttons.PlayAgainButton;
 
 
-public class GameOver extends StaticScene{
+public class GameOverMultiplayer extends StaticScene{
 	Ping ping;
-	public GameOver(Ping ping) {
+	public GameOverMultiplayer(Ping ping) {
 		// TODO Auto-generated constructor stub
 		this.ping = ping;
 	}
