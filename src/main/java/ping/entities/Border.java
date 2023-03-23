@@ -9,7 +9,6 @@ public class Border extends SpriteEntity implements Collider{
 
 	public Border(String resource, Coordinate2D location, Size size) {
 		super(resource, location, size);
-		// TODO Auto-generated constructor stub
 	}
 
 
