@@ -70,7 +70,7 @@ public class GameSchermMultiplayer extends DynamicScene implements EntitySpawner
 
 	@Override
 	public void setupEntitySpawners() {
-		PowerUpSpawner powerupSpawner = new PowerUpSpawner(500, getWidth(), getHeight());
+		PowerUpSpawner powerupSpawner = new PowerUpSpawner(500, this.getWidth(), this.getHeight());
 		addEntitySpawner(powerupSpawner);
 	}
 

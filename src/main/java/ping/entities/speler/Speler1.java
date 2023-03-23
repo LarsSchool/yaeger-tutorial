@@ -33,7 +33,7 @@ public class Speler1 extends Speler implements KeyListener, Collided, Collider {
 			} else if (pressedKeys.contains(KeyCode.S)) {
 				setMotion(4, 0d);
 			} else {
-				setMotion(0, 0d);
+				setSpeed(0);
 			}
 		} else if (Ping.getSpelerAantal() == 2) {
 			if (pressedKeys.contains(KeyCode.W)) {
@@ -41,7 +41,7 @@ public class Speler1 extends Speler implements KeyListener, Collided, Collider {
 			} else if (pressedKeys.contains(KeyCode.S)) {
 				setMotion(4, 0d);
 			} else {
-				setMotion(0, 0d);
+				setSpeed(0);
 			}
 		}
 	}
@@ -53,12 +53,14 @@ public class Speler1 extends Speler implements KeyListener, Collided, Collider {
 				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX(),
 						this.getAnchorLocation().getY() - 2);
 				setAnchorLocation(locatie);
-				setMotion(0, 0d);
+				setSpeed(0);
 			} else if (this.getDirection() == 180) {
 				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX(),
 						this.getAnchorLocation().getY() + 2);
 				setAnchorLocation(locatie);
-				setMotion(0, 180d);
+//				setMotion(0, 180d);
+				setSpeed(0);
+
 			}
 		}
 	}
