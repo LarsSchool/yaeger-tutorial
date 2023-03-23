@@ -1,14 +1,15 @@
 package ping.entities.powerups;
 
 import com.github.hanyaeger.api.Coordinate2D;
+import com.github.hanyaeger.api.Size;
 import javafx.scene.paint.Color;
 
 
 public class BalToevoegen extends PowerUps{
     public int aantalBallen;
 
-    public BalToevoegen(Coordinate2D initialLocation) {
-        super(initialLocation);
+    public BalToevoegen(String resource, Coordinate2D initialLocation, Size size) {
+        super(resource, initialLocation, size);
         aantalBallen = 1;
     }
 

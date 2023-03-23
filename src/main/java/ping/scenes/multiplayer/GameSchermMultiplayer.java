@@ -40,8 +40,10 @@ public class GameSchermMultiplayer extends DynamicScene implements EntitySpawner
 		addEntity(middenlijn);
 
 		// SPELERS
-		Speler speler1 = new Speler1(new Coordinate2D(getWidth() / 20 - 30, getHeight() / 2 - 70), new Size(40, 150));
+		Speler speler1 = new Speler1(new Coordinate2D(getWidth() / 20 - 30, getHeight() / 2 - 70),
+				new Size(40, 150));
 		addEntity(speler1);
+
 		Speler speler2 = new Speler2(new Coordinate2D(getWidth() - getWidth() / 20 - 10, getHeight() / 2 - 70),
 				new Size(40, 150));
 		addEntity(speler2);
@@ -50,27 +52,19 @@ public class GameSchermMultiplayer extends DynamicScene implements EntitySpawner
 		Border borderLinksBoven = new Border("sprites/border.png", new Coordinate2D(0, 0),
 				new Size(getWidth() / 2, 20));
 		addEntity(borderLinksBoven);
+
 		Border borderRechtsBoven = new Border("sprites/border.png", new Coordinate2D(getWidth() / 2, 0),
 				new Size(getWidth() / 2, 20));
 		addEntity(borderRechtsBoven);
+
 		Border borderLinksOnder = new Border("sprites/border.png", new Coordinate2D(0, getHeight() - 20),
 				new Size(getWidth() / 2, 20));
 		addEntity(borderLinksOnder);
+
 		Border borderRechtsOnder = new Border("sprites/border.png", new Coordinate2D(getWidth() / 2, getHeight() - 20),
 				new Size(getWidth() / 2, 20));
 		addEntity(borderRechtsOnder);
 
-		// HealthText HealthPoints = new HealthText(new Coordinate2D(getWidth() - 150,
-		// 10));
-//		addEntity(HealthPoints);
-//		var bubblesPoppedText = new BubblesPoppedText(new Coordinate2D(0, 30));
-//		addEntity(bubblesPoppedText);
-//		Swordfish zwaardvis = new Swordfish(new Coordinate2D(500, 150));
-//		addEntity(zwaardvis);
-//		Hanny hanny = new Hanny(new Coordinate2D(1, 1), HealthPoints, bubblesPoppedText, waterworld);
-//		addEntity(hanny);
-//		Sharky sharky = new Sharky(new Coordinate2D(150, 300));
-//		addEntity(sharky);
 
 	}
 
