@@ -5,7 +5,7 @@ import com.github.hanyaeger.api.Size;
 import javafx.scene.paint.Color;
 
 
-public class BalToevoegen extends PowerUps{
+public class BalToevoegen extends PowerUp{
     public int aantalBallen;
 
     public BalToevoegen(String resource, Coordinate2D initialLocation, Size size) {

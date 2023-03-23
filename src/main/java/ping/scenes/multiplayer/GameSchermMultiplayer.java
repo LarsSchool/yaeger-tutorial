@@ -9,12 +9,15 @@ import ping.Ping;
 import ping.entities.Bal;
 import ping.entities.Border;
 import ping.entities.Middenlijn;
+import ping.entities.powerups.PowerUp;
+import ping.entities.powerups.PowerUpSpawner;
 import ping.entities.speler.Speler;
 import ping.entities.speler.Speler1;
 import ping.entities.speler.Speler2;
+import java.util.ArrayList;
 
 public class GameSchermMultiplayer extends DynamicScene implements EntitySpawnerContainer {
-
+	
 	Ping ping;
 
 	public GameSchermMultiplayer(Ping ping) {
@@ -70,8 +73,8 @@ public class GameSchermMultiplayer extends DynamicScene implements EntitySpawner
 
 	@Override
 	public void setupEntitySpawners() {
-//		BubbleSpawner airSpawner = new BubbleSpawner(getWidth(), getHeight());
-//		addEntitySpawner(airSpawner);
+		PowerUpSpawner powerupSpawner = new PowerUpSpawner(500, getWidth(), getHeight());
+		addEntitySpawner(powerupSpawner);
 	}
 
 }

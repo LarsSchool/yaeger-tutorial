@@ -9,11 +9,11 @@ import javafx.scene.paint.Color;
 import java.util.Random;
 import java.util.Set;
 
-public class Inverter extends PowerUps implements KeyListener {
+public class Inverter extends PowerUp implements KeyListener {
     public int invert;
 
     public Inverter(Coordinate2D initialLocation) {
-        super(initialLocation);
+        super(null, initialLocation, null);
     }
 
     public void doPowerUp(){

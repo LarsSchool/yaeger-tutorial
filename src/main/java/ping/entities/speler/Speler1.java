@@ -9,6 +9,7 @@ import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.userinput.KeyListener;
 
 import javafx.scene.input.KeyCode;
+import ping.Ping;
 import ping.entities.Border;
 
 public class Speler1 extends Speler implements KeyListener, Collided, Collider {
@@ -23,12 +24,26 @@ public class Speler1 extends Speler implements KeyListener, Collided, Collider {
 
 	@Override
 	public void onPressedKeysChange(Set<KeyCode> pressedKeys) {
-		if (pressedKeys.contains(KeyCode.W)) {
-			setMotion(4, 180d);
-		} else if (pressedKeys.contains(KeyCode.S)) {
-			setMotion(4, 0d);
-		} else {
-			setMotion(0, 0d);
+		if (Ping.getSpelerAantal() == 1) {
+			if (pressedKeys.contains(KeyCode.UP)) {
+				setMotion(4, 180d);
+			} else if (pressedKeys.contains(KeyCode.DOWN)) {
+				setMotion(4, 0d);
+			} else if (pressedKeys.contains(KeyCode.W)) {
+				setMotion(4, 180d);
+			} else if (pressedKeys.contains(KeyCode.S)) {
+				setMotion(4, 0d);
+			} else {
+				setMotion(0, 0d);
+			}
+		} else if (Ping.getSpelerAantal() == 2) {
+			if (pressedKeys.contains(KeyCode.W)) {
+				setMotion(4, 180d);
+			} else if (pressedKeys.contains(KeyCode.S)) {
+				setMotion(4, 0d);
+			} else {
+				setMotion(0, 0d);
+			}
 		}
 	}
 

@@ -10,7 +10,7 @@ import ping.scenes.singleplayer.GameSchermSingleplayer;
 
 public class Ping extends YaegerGame{
 	
-	private int spelerAantal;
+	private static int spelerAantal;
 
 	public Ping() {
 		
@@ -45,7 +45,7 @@ public class Ping extends YaegerGame{
 		spelerAantal = waarde;
 	}
 	
-	public int getSpelerAantal() {
+	public static int getSpelerAantal() {
 		return spelerAantal;
 	}
 }

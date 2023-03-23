@@ -8,8 +8,9 @@ import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 
-import ping.entities.powerups.SnelheidAanpassen;
 import ping.entities.speler.Speler;
+import ping.entities.speler.Speler1;
+import ping.entities.speler.Speler2;
 
 public class Bal extends DynamicSpriteEntity implements Collided {
 
@@ -17,6 +18,9 @@ public class Bal extends DynamicSpriteEntity implements Collided {
 	private double richting;
 	private Random rand = new Random();
 	private Coordinate2D location;
+	
+	private boolean speler1Aangeraakt = false;
+	private boolean speler2Aangeraakt = false;
 
 	public Bal(String resource, Coordinate2D initialLocation, Size size) {
 		super(resource, initialLocation, size);
@@ -56,20 +60,7 @@ public class Bal extends DynamicSpriteEntity implements Collided {
 
 	@Override
 	public void onCollision(Collider collidingObject) {
-		aantalBalTouches++;
 		if (collidingObject instanceof Border) {
-//			if (richting > 90 && richting < 270) {
-//				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX(),
-//						this.getAnchorLocation().getY() + 2);
-//				setAnchorLocation(locatie);
-//				setMotion(0, 0d);
-//			} else if (richting >= 270 && richting <= 90) {
-//				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX(),
-//						this.getAnchorLocation().getY() - 2);
-//				setAnchorLocation(locatie);
-//				setMotion(0, 180d);
-//			}
-
 			richting += 45 + getAfwijking(3);
 			if (richting > 359) {
 				richting -= 360;
@@ -84,10 +75,10 @@ public class Bal extends DynamicSpriteEntity implements Collided {
 			}
 		else if (collidingObject instanceof Speler) {
 			if(richting > 90 && richting < 270) {
-				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX()- 5, this.getAnchorLocation().getY());
+				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX()- 10, this.getAnchorLocation().getY());
 				setAnchorLocation(locatie);
 			} else {
-				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX() + 5, this.getAnchorLocation().getY());
+				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX() + 10, this.getAnchorLocation().getY());
 				setAnchorLocation(locatie);
 			}
 			if ((richting > 45 && richting < 135) || (richting > 225 && richting < 315)) {
@@ -99,6 +90,15 @@ public class Bal extends DynamicSpriteEntity implements Collided {
 				richting -= 360;
 			}
 			setMotion(5, richting);
+		}
+		if (collidingObject instanceof Speler1 && !speler1Aangeraakt) {
+			speler1Aangeraakt = true;
+			speler2Aangeraakt = false;
+			aantalBalTouches++;
+		} else if(collidingObject instanceof Speler2 && !speler2Aangeraakt) {
+			speler2Aangeraakt = true;
+			speler1Aangeraakt = false;
+			aantalBalTouches++;
 		}
 	}
 }

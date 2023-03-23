@@ -9,10 +9,11 @@ import ping.entities.Bal;
 
 import java.util.Random;
 
-public abstract class  PowerUps extends DynamicCircleEntity implements Collided {
+public abstract class  PowerUp extends DynamicCircleEntity implements Collided {
     public int powerUpRandom;
     public int aantalBalTouches;
-    public PowerUps(Coordinate2D initialLocation) {
+    
+    public PowerUp(String resource, Coordinate2D initialLocation, Size size) {
         super(initialLocation);
         aantalBalTouches = Bal.getAantalBalTouches();
     }
@@ -21,7 +22,7 @@ public abstract class  PowerUps extends DynamicCircleEntity implements Collided 
     public void onCollision(Collider collidingObject) {
         if (aantalBalTouches % 5 == 0) {
             Random rand = new Random();
-            powerUpRandom = rand.nextInt(0,4);
+            powerUpRandom = rand.nextInt(5);
             if (powerUpRandom == 0) {
                 BalToevoegen powerUp =
                         new BalToevoegen("sprites/powerUps-rood.png",
@@ -38,10 +39,6 @@ public abstract class  PowerUps extends DynamicCircleEntity implements Collided 
         }
     }
 
-    @Override
-    public void setupEntities() {
-        addEntity(powerUp);
-    }
 
     public abstract void doPowerUp();
 }
