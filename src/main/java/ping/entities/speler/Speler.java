@@ -6,15 +6,19 @@ import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 
 public abstract class  Speler extends DynamicSpriteEntity{
 	
-	private Size size;
+	private static Size size;
 
 	public Speler(String resource, Coordinate2D initialLocation, Size size) {
 		super(resource, initialLocation, size);
 		this.size = size;
 	}
 	
-	public void setHeight() {
-		
+	public void setHeight(double waarde) {
+		size = new Size(waarde, getWidth());
+	}
+	
+	public void setWidth(double waarde) {
+		size = new Size(getHeight(), waarde);
 	}
 	
 	public double getHeight(){

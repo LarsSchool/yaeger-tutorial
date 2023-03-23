@@ -42,11 +42,11 @@ public class GameSchermMultiplayer extends DynamicScene implements EntitySpawner
 
 		// SPELERS
 		Speler speler1 = new Speler1(new Coordinate2D(getWidth() / 20 - 30, getHeight() / 2 - 70),
-				new Size(40, 150));
+				new Size(30, 130));
 		addEntity(speler1);
 
 		Speler speler2 = new Speler2(new Coordinate2D(getWidth() - getWidth() / 20 - 10, getHeight() / 2 - 70),
-				new Size(40, 150));
+				new Size(30, 130));
 		addEntity(speler2);
 
 		// ALLE BORDERS TOEVOEGEN

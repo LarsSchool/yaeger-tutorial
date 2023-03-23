@@ -3,9 +3,8 @@ package ping.entities.powerups;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 
-import javafx.scene.paint.Color;
+import ping.entities.speler.Speler;
 
-import java.util.Random;
 
 public class GrootteSpeler extends PowerUp {
 
@@ -16,6 +15,8 @@ public class GrootteSpeler extends PowerUp {
 
 	public void doPowerUp() {
 		int random = getRandom(2);
+		//TO DO we moeten eerst de hitbox maken voor speler, want dan kan deze ook aangepast worden.
+//		if(Speler.getHeight() > )
     	remove();
 	}
 
