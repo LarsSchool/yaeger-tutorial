@@ -15,7 +15,7 @@ public class BalToevoegen extends PowerUp{
 
     public void doPowerUp(){
         aantalBallen++;
-		
+
 		// haalt power up weg
     	remove();
     }

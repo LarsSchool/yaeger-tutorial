@@ -10,6 +10,7 @@ import com.github.hanyaeger.api.userinput.KeyListener;
 import javafx.scene.input.KeyCode;
 import ping.Ping;
 import ping.entities.Border;
+import ping.entities.powerups.GrootteSpeler;
 
 public class Speler1 extends Speler implements KeyListener, Collided, Collider {
 	private static boolean inverted = false;
@@ -84,5 +85,4 @@ public class Speler1 extends Speler implements KeyListener, Collided, Collider {
 	public static int getPuntenAantal() {
 		return puntenAantal;
 	}
-	
 }

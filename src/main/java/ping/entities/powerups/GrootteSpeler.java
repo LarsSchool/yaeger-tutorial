@@ -4,7 +4,6 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import ping.entities.speler.Speler;
 
-
 public class GrootteSpeler extends PowerUp {
 
 	public GrootteSpeler(String resource, Coordinate2D initialLocation, Size size) {
