@@ -28,10 +28,10 @@ public abstract class  Speler extends DynamicSpriteEntity{
 	public double getWidth(){
 		return size.width();
 	}
-	
-	public abstract void setPuntenAantal(int waarde);
-	
-	public abstract int getPuntenAantal();
 
+	public static int getPuntenAantal() {
+		return 0;
+	}
+	
 
 }

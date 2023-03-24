@@ -28,8 +28,8 @@ public class PowerUpSpawner extends EntitySpawner {
 			int x = rand.nextInt(400) + 400;
 			int y = rand.nextInt(234) + 233;
 //			spawn(new SnelheidAanpassen("sprites/powerUp-groen.png", new Coordinate2D(x, y), new Size(50, 50)));
-//			spawn(new Inverter("sprites/powerUp-blauw.png", new Coordinate2D(x, y), new Size(50,50)));
-			spawn(new GrootteSpeler("sprites/powerUp-paars.png", new Coordinate2D(x, y), new Size(50,50)));
+			spawn(new Inverter("sprites/powerUp-blauw.png", new Coordinate2D(x, y), new Size(50,50)));
+//			spawn(new GrootteSpeler("sprites/powerUp-paars.png", new Coordinate2D(x, y), new Size(50,50)));
 
 //			switch(random) {
 //			case 0:

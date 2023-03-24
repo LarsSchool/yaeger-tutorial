@@ -77,13 +77,11 @@ public class Speler1 extends Speler implements KeyListener, Collided, Collider {
 		}
 	}
 
-	@Override
-	public void setPuntenAantal(int waarde) {
+	public static void setPuntenAantal(int waarde) {
 		puntenAantal = waarde;
 	}
 
-	@Override
-	public int getPuntenAantal() {
+	public static int getPuntenAantal() {
 		return puntenAantal;
 	}
 	

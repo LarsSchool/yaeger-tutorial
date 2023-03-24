@@ -23,6 +23,7 @@ public class TitelScherm extends StaticScene{
 	@Override
 	public void setupScene(){
 		setBackgroundImage("backgrounds/rick-roll.gif");
+		
 	}
 
 	@Override

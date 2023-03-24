@@ -15,6 +15,7 @@ import ping.entities.scorebord.puntenText;
 import ping.entities.speler.Speler;
 import ping.entities.speler.Speler1;
 import ping.entities.speler.Speler2;
+
 import java.util.ArrayList;
 
 public class GameSchermMultiplayer extends DynamicScene implements EntitySpawnerContainer {
@@ -68,11 +69,11 @@ public class GameSchermMultiplayer extends DynamicScene implements EntitySpawner
 		addEntity(borderRechtsOnder);
 		
 		puntenText puntenSpeler1 = new puntenText(new Coordinate2D(getWidth()/4, getHeight()/8));
-		puntenSpeler1.setPuntenText("" + speler1.getPuntenAantal());
+		puntenSpeler1.setPuntenText("" + Speler1.getPuntenAantal());
 		addEntity(puntenSpeler1);
 		
 		puntenText puntenSpeler2 = new puntenText(new Coordinate2D(getWidth()/4 * 3, getHeight()/8));
-		puntenSpeler2.setPuntenText("" + speler2.getPuntenAantal());
+		puntenSpeler2.setPuntenText("" + Speler2.getPuntenAantal());
 		addEntity(puntenSpeler2);
 
 

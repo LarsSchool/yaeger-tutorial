@@ -8,6 +8,7 @@ import com.github.hanyaeger.api.userinput.KeyListener;
 import javafx.scene.input.KeyCode;
 import ping.Ping;
 import ping.entities.Border;
+
 import java.util.Set;
 
 public class Speler2 extends Speler implements KeyListener, Collided, Collider {
@@ -66,14 +67,13 @@ public class Speler2 extends Speler implements KeyListener, Collided, Collider {
 			}
 		}
 	}
-
-	@Override
-	public void setPuntenAantal(int waarde) {
+	
+	public static void setPuntenAantal(int waarde) {
 		puntenAantal = waarde;
 	}
 
-	@Override
-	public int getPuntenAantal() {
+	public static int getPuntenAantal() {
 		return puntenAantal;
 	}
+
 }

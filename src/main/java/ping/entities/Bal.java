@@ -139,14 +139,15 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 				richting = getStartRichting();
 				setAantalBalTouches(0);
 				setBalSnelheid(5);
-				speler2.setPuntenAantal();
+				Speler2.setPuntenAantal(Speler2.getPuntenAantal() + 1);
+				System.out.println(Speler2.getPuntenAantal());
 				break;
 			case RIGHT:
 				setAnchorLocation(location);
 				richting = getStartRichting();
 				setAantalBalTouches(0);
 				setBalSnelheid(5);
-				speler1.setPuntenAantal();
+				Speler1.setPuntenAantal(Speler1.getPuntenAantal() + 1);
 				break;
 		default:
 			break;
