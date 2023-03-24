@@ -13,8 +13,8 @@ public abstract class  Speler extends DynamicSpriteEntity{
 		this.size = size;
 	}
 	
-	public void setHeight(double waarde) {
-		size = new Size(waarde, getWidth());
+	public static void setHeight(double waarde) {
+		size = new Size(waarde);
 	}
 	
 	public void setWidth(double waarde) {
@@ -28,4 +28,10 @@ public abstract class  Speler extends DynamicSpriteEntity{
 	public double getWidth(){
 		return size.width();
 	}
+	
+	public abstract void setPuntenAantal(int waarde);
+	
+	public abstract int getPuntenAantal();
+
+
 }

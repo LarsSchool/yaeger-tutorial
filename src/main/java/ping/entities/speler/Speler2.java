@@ -12,6 +12,7 @@ import java.util.Set;
 
 public class Speler2 extends Speler implements KeyListener, Collided, Collider {
 	private static boolean inverted = false;
+	private static int puntenAantal = 0;
 
 	// constructor van speler 2
 	public Speler2(Coordinate2D location, Size size) {
@@ -64,5 +65,15 @@ public class Speler2 extends Speler implements KeyListener, Collided, Collider {
 				setSpeed(0);
 			}
 		}
+	}
+
+	@Override
+	public void setPuntenAantal(int waarde) {
+		puntenAantal = waarde;
+	}
+
+	@Override
+	public int getPuntenAantal() {
+		return puntenAantal;
 	}
 }

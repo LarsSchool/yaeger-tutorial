@@ -13,6 +13,7 @@ import ping.entities.Border;
 
 public class Speler1 extends Speler implements KeyListener, Collided, Collider {
 	private static boolean inverted = false;
+	private static int puntenAantal = 0;
 
 	public Speler1(Coordinate2D location, Size size) {
 		super("sprites/player_1.png", location, size);
@@ -40,7 +41,7 @@ public class Speler1 extends Speler implements KeyListener, Collided, Collider {
 			} else {
 				setSpeed(0);
 			}
-		} else if(Ping.getSpelerAantal() == 2 && inverted) {
+		} else if (Ping.getSpelerAantal() == 2 && inverted) {
 			if (pressedKeys.contains(KeyCode.S)) {
 				setMotion(4, 180d);
 			} else if (pressedKeys.contains(KeyCode.W)) {
@@ -50,9 +51,9 @@ public class Speler1 extends Speler implements KeyListener, Collided, Collider {
 			}
 		}
 	}
-	
+
 	public static void invert() {
-		if(inverted) {
+		if (inverted) {
 			inverted = false;
 		} else {
 			inverted = true;
@@ -64,17 +65,26 @@ public class Speler1 extends Speler implements KeyListener, Collided, Collider {
 		if (collidingObject instanceof Border) {
 			if (this.getDirection() == 0) {
 				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX(),
-						this.getAnchorLocation().getY() - 2);
+						this.getAnchorLocation().getY() - 5);
 				setAnchorLocation(locatie);
 				setSpeed(0);
 			} else if (this.getDirection() == 180) {
 				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX(),
-						this.getAnchorLocation().getY() + 2);
+						this.getAnchorLocation().getY() + 5);
 				setAnchorLocation(locatie);
-//				setMotion(0, 180d);
 				setSpeed(0);
-
 			}
 		}
 	}
+
+	@Override
+	public void setPuntenAantal(int waarde) {
+		puntenAantal = waarde;
+	}
+
+	@Override
+	public int getPuntenAantal() {
+		return puntenAantal;
+	}
+	
 }

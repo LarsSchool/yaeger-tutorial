@@ -13,6 +13,7 @@ import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.api.userinput.KeyListener;
 
 import javafx.scene.input.KeyCode;
+import ping.Ping;
 import ping.entities.speler.Speler;
 import ping.entities.speler.Speler1;
 import ping.entities.speler.Speler2;
@@ -90,6 +91,7 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 			if (richting > 359) {
 				richting -= 360;
 			}
+
 			setMotion(balSnelheid, richting);
 		} else if (collidingObject instanceof SingleplayerMuur) {
 			richting += 45 + getAfwijking(2);
@@ -99,11 +101,11 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 			setMotion(balSnelheid, richting);
 		} else if (collidingObject instanceof Speler) {
 			if (richting > 0 && richting < 180) {
-				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX() - 5,
+				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX() - 10,
 						this.getAnchorLocation().getY());
 				setAnchorLocation(locatie);
 			} else {
-				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX() + 5,
+				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX() + 10,
 						this.getAnchorLocation().getY());
 				setAnchorLocation(locatie);
 			}
@@ -130,23 +132,27 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 
 	@Override
 	public void notifyBoundaryTouching(SceneBorder border) {
-		switch (border) {
-		case LEFT:
-			setAnchorLocation(location);
-			richting = getStartRichting();
-			setAantalBalTouches(0);
-			setBalSnelheid(5);
-//			puntenSpeler2++;
+		if (Ping.getSpelerAantal() == 2) {
+			switch (border) {
+			case LEFT:
+				setAnchorLocation(location);
+				richting = getStartRichting();
+				setAantalBalTouches(0);
+				setBalSnelheid(5);
+				speler2.setPuntenAantal();
+				break;
+			case RIGHT:
+				setAnchorLocation(location);
+				richting = getStartRichting();
+				setAantalBalTouches(0);
+				setBalSnelheid(5);
+				speler1.setPuntenAantal();
+				break;
+		default:
 			break;
-		case RIGHT:
-			setAnchorLocation(location);
-			richting = getStartRichting();
-			setAantalBalTouches(0);
-			setBalSnelheid(5);
-//			puntenSpeler1++
-			break;
-//		default:
-//			break;
+			}
+		} else {
+			
 		}
 	}
 

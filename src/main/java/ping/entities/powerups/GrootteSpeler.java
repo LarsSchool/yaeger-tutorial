@@ -15,8 +15,8 @@ public class GrootteSpeler extends PowerUp {
 
 	public void doPowerUp() {
 		int random = getRandom(2);
-		//TO DO we moeten eerst de hitbox maken voor speler, want dan kan deze ook aangepast worden.
-//		if(Speler.getHeight() > )
+		int randomWaarde = getRandom(7) + 8;
+		Speler.setHeight(randomWaarde * 10);
     	remove();
 	}
 

@@ -11,6 +11,7 @@ import ping.entities.Border;
 import ping.entities.Middenlijn;
 import ping.entities.powerups.PowerUp;
 import ping.entities.powerups.PowerUpSpawner;
+import ping.entities.scorebord.puntenText;
 import ping.entities.speler.Speler;
 import ping.entities.speler.Speler1;
 import ping.entities.speler.Speler2;
@@ -65,6 +66,14 @@ public class GameSchermMultiplayer extends DynamicScene implements EntitySpawner
 		Border borderRechtsOnder = new Border("sprites/border.png", new Coordinate2D(getWidth() / 2, getHeight() - 20),
 				new Size(getWidth() / 2, 20));
 		addEntity(borderRechtsOnder);
+		
+		puntenText puntenSpeler1 = new puntenText(new Coordinate2D(getWidth()/4, getHeight()/8));
+		puntenSpeler1.setPuntenText("" + speler1.getPuntenAantal());
+		addEntity(puntenSpeler1);
+		
+		puntenText puntenSpeler2 = new puntenText(new Coordinate2D(getWidth()/4 * 3, getHeight()/8));
+		puntenSpeler2.setPuntenText("" + speler2.getPuntenAantal());
+		addEntity(puntenSpeler2);
 
 
 	}
