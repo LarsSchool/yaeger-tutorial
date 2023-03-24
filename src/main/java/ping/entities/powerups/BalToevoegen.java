@@ -1,14 +1,11 @@
 package ping.entities.powerups;
 
-import java.util.Random;
-
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 
 
 public class BalToevoegen extends PowerUp{
     public int aantalBallen;
-	Random rand = new Random();
 
     public BalToevoegen(String resource, Coordinate2D initialLocation, Size size) {
         super(resource, initialLocation, size);
@@ -17,7 +14,9 @@ public class BalToevoegen extends PowerUp{
     }
 
     public void doPowerUp(){
-//        aantalBallen++;
+        aantalBallen++;
+		
+		// haalt power up weg
     	remove();
     }
 
@@ -27,7 +26,7 @@ public class BalToevoegen extends PowerUp{
 
 	@Override
 	public void setMotionPowerUp() {
-		int random = rand.nextInt(2);
+		int random = getRandom(2);
 		if (random == 0) {
 			setMotion(1, 90d);
 		} else {

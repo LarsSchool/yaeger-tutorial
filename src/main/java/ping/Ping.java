@@ -37,7 +37,6 @@ public class Ping extends YaegerGame{
 
 	}
 
-	
 	public void setSpelerAantal(int waarde) {
 		spelerAantal = waarde;
 	}
