@@ -10,13 +10,16 @@ import com.github.hanyaeger.api.userinput.KeyListener;
 import javafx.scene.input.KeyCode;
 import ping.Ping;
 import ping.entities.Border;
+import ping.entities.scorebord.PuntenText;
 
 public class Speler1 extends Speler implements KeyListener, Collided, Collider {
 	private static boolean inverted = false;
 	private static int puntenAantal = 0;
+	private static PuntenText puntenSpeler1;
 
-	public Speler1(Coordinate2D location, Size size) {
-		super("sprites/player_1.png", location, size);
+	public Speler1(Coordinate2D location, Size size, PuntenText puntenSpeler1) {
+		super("sprites/player_1.png", location, size, puntenSpeler1);
+		this.puntenSpeler1 = puntenSpeler1;
 	}
 
 	@Override
@@ -76,12 +79,13 @@ public class Speler1 extends Speler implements KeyListener, Collided, Collider {
 			}
 		}
 	}
-
-	public static void setPuntenAantal(int waarde) {
+	
+	public void setPuntenAantal(int waarde) {
 		puntenAantal = waarde;
 	}
-
-	public static int getPuntenAantal() {
+	
+	@Override
+	public int getPuntenAantal() {
 		return puntenAantal;
 	}
 	

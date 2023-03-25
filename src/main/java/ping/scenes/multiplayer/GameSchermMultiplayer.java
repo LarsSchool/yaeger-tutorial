@@ -3,6 +3,7 @@ package ping.scenes.multiplayer;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.EntitySpawnerContainer;
 import com.github.hanyaeger.api.Size;
+import com.github.hanyaeger.api.UpdateExposer;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 
 import ping.Ping;
@@ -11,14 +12,14 @@ import ping.entities.Border;
 import ping.entities.Middenlijn;
 import ping.entities.powerups.PowerUp;
 import ping.entities.powerups.PowerUpSpawner;
-import ping.entities.scorebord.puntenText;
+import ping.entities.scorebord.PuntenText;
 import ping.entities.speler.Speler;
 import ping.entities.speler.Speler1;
 import ping.entities.speler.Speler2;
 
-import java.util.ArrayList;
 
-public class GameSchermMultiplayer extends DynamicScene implements EntitySpawnerContainer {
+
+public class GameSchermMultiplayer extends DynamicScene implements EntitySpawnerContainer, UpdateExposer {
 	
 	Ping ping;
 
@@ -33,7 +34,28 @@ public class GameSchermMultiplayer extends DynamicScene implements EntitySpawner
 
 	@Override
 	public void setupEntities() {
-		Bal bal = new Bal("sprites/bal.png", new Coordinate2D(getWidth()/2 - (30/2), getHeight()/2 - (30/2)), new Size(30,30));
+		
+		//SCOREBORD
+		PuntenText puntenSpeler1 = new PuntenText(new Coordinate2D(getWidth()/4, getHeight()/8));
+		addEntity(puntenSpeler1);
+		
+		PuntenText puntenSpeler2 = new PuntenText(new Coordinate2D(getWidth()/4 * 3, getHeight()/8));
+		addEntity(puntenSpeler2);
+
+		// SPELERS
+		Speler speler1 = new Speler1(new Coordinate2D(getWidth() / 20 - 30, getHeight() / 2 - 70),
+				new Size(30, 130), puntenSpeler1);
+		addEntity(speler1);
+
+		Speler speler2 = new Speler2(new Coordinate2D(getWidth() - getWidth() / 20 - 10, getHeight() / 2 - 70),
+				new Size(30, 130), puntenSpeler2);
+		addEntity(speler2);
+		
+		puntenSpeler1.setPuntenText("" + speler1.getPuntenAantal());
+		puntenSpeler2.setPuntenText("" + speler2.getPuntenAantal());
+
+		
+		Bal bal = new Bal("sprites/bal.png", new Coordinate2D(getWidth()/2 - (30/2), getHeight()/2 - (30/2)), new Size(30,30), speler1, speler2);
 		addEntity(bal);
 		
 		//TO DO aanpassen dat deze steeds breder wordt als er meer baltouches komen
@@ -41,15 +63,6 @@ public class GameSchermMultiplayer extends DynamicScene implements EntitySpawner
 				new Coordinate2D(getWidth() / 2 - 20 - (bal.getAantalBalTouches() * 4) / 2, 0),
 				new Size(40 + bal.getAantalBalTouches() * 4, getHeight()));
 		addEntity(middenlijn);
-
-		// SPELERS
-		Speler speler1 = new Speler1(new Coordinate2D(getWidth() / 20 - 30, getHeight() / 2 - 70),
-				new Size(30, 130));
-		addEntity(speler1);
-
-		Speler speler2 = new Speler2(new Coordinate2D(getWidth() - getWidth() / 20 - 10, getHeight() / 2 - 70),
-				new Size(30, 130));
-		addEntity(speler2);
 
 		// ALLE BORDERS TOEVOEGEN
 		Border borderLinksBoven = new Border("sprites/border.png", new Coordinate2D(0, 0),
@@ -68,13 +81,6 @@ public class GameSchermMultiplayer extends DynamicScene implements EntitySpawner
 				new Size(getWidth() / 2, 20));
 		addEntity(borderRechtsOnder);
 		
-		puntenText puntenSpeler1 = new puntenText(new Coordinate2D(getWidth()/4, getHeight()/8));
-		puntenSpeler1.setPuntenText("" + Speler1.getPuntenAantal());
-		addEntity(puntenSpeler1);
-		
-		puntenText puntenSpeler2 = new puntenText(new Coordinate2D(getWidth()/4 * 3, getHeight()/8));
-		puntenSpeler2.setPuntenText("" + Speler2.getPuntenAantal());
-		addEntity(puntenSpeler2);
 
 
 	}
@@ -85,4 +91,7 @@ public class GameSchermMultiplayer extends DynamicScene implements EntitySpawner
 		addEntitySpawner(powerupSpawner);
 	}
 
+	@Override
+	public void explicitUpdate(long timestamp) {
+	}
 }

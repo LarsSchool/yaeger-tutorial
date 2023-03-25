@@ -7,7 +7,7 @@ import com.github.hanyaeger.api.Size;
 
 
 public class BalToevoegen extends PowerUp{
-    public int aantalBallen;
+    public static int aantalBallen;
 	Random rand = new Random();
 
     public BalToevoegen(String resource, Coordinate2D initialLocation, Size size) {
@@ -18,10 +18,12 @@ public class BalToevoegen extends PowerUp{
 
     public void doPowerUp(){
 //        aantalBallen++;
+    	PowerUpSpawner.spawnNewBal();
+    	aantalBallen++;
     	remove();
     }
 
-    public int getAantalBallen(){
+    public static int getAantalBallen(){
         return aantalBallen;
     }
 
@@ -33,5 +35,9 @@ public class BalToevoegen extends PowerUp{
 		} else {
 			setMotion(1, 270d);
 		}
+	}
+
+	public static void SetAantalBallen(int waarde) {
+		aantalBallen = waarde;
 	}
 }

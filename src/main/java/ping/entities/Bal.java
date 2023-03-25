@@ -17,6 +17,7 @@ import ping.Ping;
 import ping.entities.speler.Speler;
 import ping.entities.speler.Speler1;
 import ping.entities.speler.Speler2;
+import ping.entities.powerups.BalToevoegen;
 
 public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTouchingWatcher, KeyListener {
 
@@ -25,6 +26,9 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 	private Random rand = new Random();
 	private Coordinate2D location;
 	private static int balSnelheid;
+	
+	private static Speler speler1;
+	private static Speler speler2;
 
 	private boolean speler1Aangeraakt = false;
 	private boolean speler2Aangeraakt = false;
@@ -35,6 +39,16 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 		balSnelheid = 5;
 		setMotion(balSnelheid, richting);
 		this.location = initialLocation;
+	}
+	
+	public Bal(String resource, Coordinate2D initialLocation, Size size, Speler speler1, Speler speler2) {
+		super(resource, initialLocation, size);
+		richting = getStartRichting();
+		balSnelheid = 5;
+		setMotion(balSnelheid, richting);
+		this.location = initialLocation;
+		this.speler1 = speler1;
+		this.speler2 = speler2;
 	}
 
 	public static void setBalSnelheid(int waarde) {
@@ -139,15 +153,22 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 				richting = getStartRichting();
 				setAantalBalTouches(0);
 				setBalSnelheid(5);
-				Speler2.setPuntenAantal(Speler2.getPuntenAantal() + 1);
-				System.out.println(Speler2.getPuntenAantal());
+				speler2.setPuntenAantal(speler2.getPuntenAantal() + 1);
+				if(BalToevoegen.getAantalBallen() > 1) {
+					remove();
+					BalToevoegen.SetAantalBallen(BalToevoegen.getAantalBallen() - 1);
+				}
 				break;
 			case RIGHT:
 				setAnchorLocation(location);
 				richting = getStartRichting();
 				setAantalBalTouches(0);
 				setBalSnelheid(5);
-				Speler1.setPuntenAantal(Speler1.getPuntenAantal() + 1);
+				speler1.setPuntenAantal(speler1.getPuntenAantal() + 1);
+				if(BalToevoegen.getAantalBallen() > 1) {
+					remove();
+					BalToevoegen.SetAantalBallen(BalToevoegen.getAantalBallen() - 1);
+				}
 				break;
 		default:
 			break;

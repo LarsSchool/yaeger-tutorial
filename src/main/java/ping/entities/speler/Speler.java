@@ -4,13 +4,17 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 
+import ping.entities.scorebord.PuntenText;
+
 public abstract class  Speler extends DynamicSpriteEntity{
 	
 	private static Size size;
+	PuntenText puntenSpeler;
 
-	public Speler(String resource, Coordinate2D initialLocation, Size size) {
+	public Speler(String resource, Coordinate2D initialLocation, Size size, PuntenText puntenSpeler) {
 		super(resource, initialLocation, size);
 		this.size = size;
+		this.puntenSpeler = puntenSpeler;
 	}
 	
 	public static void setHeight(double waarde) {
@@ -29,8 +33,13 @@ public abstract class  Speler extends DynamicSpriteEntity{
 		return size.width();
 	}
 
-	public static int getPuntenAantal() {
+	public int getPuntenAantal() {
 		return 0;
+	}
+	
+	public void setPuntenAantal(int waarde) {
+//		puntenAantal = waarde;
+		puntenSpeler.setPuntenText("" + waarde);
 	}
 	
 
