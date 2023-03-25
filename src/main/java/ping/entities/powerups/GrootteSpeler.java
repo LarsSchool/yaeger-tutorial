@@ -2,9 +2,7 @@ package ping.entities.powerups;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
-
 import ping.entities.speler.Speler;
-
 
 public class GrootteSpeler extends PowerUp {
 
@@ -17,6 +15,7 @@ public class GrootteSpeler extends PowerUp {
 		int random = getRandom(2);
 		int randomWaarde = getRandom(7) + 8;
 		Speler.setHeight(randomWaarde * 10);
+		// haalt power up weg
     	remove();
 	}
 

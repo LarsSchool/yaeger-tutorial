@@ -4,15 +4,10 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
-import com.github.hanyaeger.api.userinput.KeyListener;
-import javafx.scene.input.KeyCode;
 import ping.entities.speler.Speler1;
 import ping.entities.speler.Speler2;
 
-import java.util.Random;
-import java.util.Set;
-
-public class Inverter extends PowerUp implements KeyListener, Collided {
+public class Inverter extends PowerUp implements Collided {
 	public int invert;
 
 	public Inverter(String resource, Coordinate2D initialLocation, Size size) {
@@ -31,17 +26,12 @@ public class Inverter extends PowerUp implements KeyListener, Collided {
 	}
 
 	public void doPowerUp() {
-
+		// haalt power up weg
 		remove();
 	}
 
 	public int getInvert() {
 		return invert;
-	}
-
-	@Override
-	public void onPressedKeysChange(Set<KeyCode> set) {
-
 	}
 
 	@Override

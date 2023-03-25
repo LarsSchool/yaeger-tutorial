@@ -77,5 +77,4 @@ public class Speler2 extends Speler implements KeyListener, Collided, Collider {
 	public int getPuntenAantal() {
 		return puntenAantal;
 	}
-
 }
