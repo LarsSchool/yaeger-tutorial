@@ -18,7 +18,6 @@ public class PuntenSpeler2 extends TextEntity{
 
     public void setPuntenText(final int punten) {
         setText("" + punten);
-        System.out.println(punten);
     }
 }
 

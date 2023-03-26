@@ -28,25 +28,28 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 	private Random rand = new Random();
 	private Coordinate2D location;
 	private static int balSnelheid;
-	
+
 	private Speler speler1;
 	private Speler speler2;
-	
+
 	private PuntenSpeler1 puntenSpeler1;
 	private PuntenSpeler2 puntenSpeler2;
-	
+
 	private Middenlijn middenlijn;
 
+	private Ping ping;
 
 	private boolean speler1Aangeraakt = false;
 	private boolean speler2Aangeraakt = false;
 
-	
-	public Bal(String resource, Coordinate2D initialLocation, Size size, Speler speler1, Speler speler2, PuntenSpeler1 puntenSpeler1, PuntenSpeler2 puntenSpeler2, Middenlijn middenlijn) {
+	// constructor bal multiplayer
+	public Bal(Ping ping, String resource, Coordinate2D initialLocation, Size size, Speler speler1, Speler speler2,
+			PuntenSpeler1 puntenSpeler1, PuntenSpeler2 puntenSpeler2, Middenlijn middenlijn) {
 		super(resource, initialLocation, size);
 		richting = getStartRichting();
 		balSnelheid = 5;
 		setMotion(balSnelheid, richting);
+		this.ping = ping;
 		this.location = initialLocation;
 		this.speler1 = speler1;
 		this.speler2 = speler2;
@@ -55,12 +58,18 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 		this.middenlijn = middenlijn;
 	}
 
-//	public Bal(String resource, Coordinate2D initialLocation, Size size) {
-//		super(resource, initialLocation, size);
-//		richting = getStartRichting();
-//		balSnelheid = 5;
-//		setMotion(balSnelheid, richting);
-//		}
+	// constructor bal singleplayer
+	public Bal(Ping ping, String resource, Coordinate2D initialLocation, Size size, Speler speler1,
+			PuntenSpeler1 puntenSpeler1) {
+		super(resource, initialLocation, size);
+		richting = getStartRichting();
+		balSnelheid = 5;
+		setMotion(balSnelheid, richting);
+		this.ping = ping;
+		this.location = initialLocation;
+		this.speler1 = speler1;
+		this.puntenSpeler1 = puntenSpeler1;
+	}
 
 	public static void setBalSnelheid(int waarde) {
 		balSnelheid = waarde;
@@ -143,17 +152,24 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 				richting -= 360;
 			}
 			setMotion(balSnelheid, richting);
-		}
-		if (collidingObject instanceof Speler1 && !speler1Aangeraakt) {
-			speler1Aangeraakt = true;
-			speler2Aangeraakt = false;
-			aantalBalTouches++;
-			middenlijn.middenlijnExpand(middenlijn.getWidth() + 10, 10);
-		} else if (collidingObject instanceof Speler2 && !speler2Aangeraakt) {
-			speler2Aangeraakt = true;
-			speler1Aangeraakt = false;
-			aantalBalTouches++;
-			middenlijn.middenlijnExpand(middenlijn.getWidth() + 10, 10);
+			if (Ping.getSpelerAantal() == 2) {
+				if (collidingObject instanceof Speler1 && !speler1Aangeraakt) {
+					speler1Aangeraakt = true;
+					speler2Aangeraakt = false;
+					aantalBalTouches++;
+					middenlijn.middenlijnExpand(middenlijn.getWidth() + 10, 10);
+				} else if (collidingObject instanceof Speler2 && !speler2Aangeraakt) {
+					speler2Aangeraakt = true;
+					speler1Aangeraakt = false;
+					aantalBalTouches++;
+					middenlijn.middenlijnExpand(middenlijn.getWidth() + 10, 10);
+				}
+			} else if (Ping.getSpelerAantal() == 1) {
+				speler1.setPuntenAantal(speler1.getPuntenAantal() + 1);
+				puntenSpeler1.setPuntenText(speler1.getPuntenAantal());
+				aantalBalTouches++;
+				balSnelheid += 1;
+			}
 		}
 	}
 
@@ -168,9 +184,16 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 				setBalSnelheid(5);
 				speler2.setPuntenAantal(speler2.getPuntenAantal() + 1);
 				puntenSpeler2.setPuntenText(speler2.getPuntenAantal());
-				if(BalToevoegen.getAantalBallen() > 1) {
+				if (BalToevoegen.getAantalBallen() > 1) {
 					remove();
 					BalToevoegen.SetAantalBallen(BalToevoegen.getAantalBallen() - 1);
+				}
+				if (checkGewonnen()) {
+					speler1.setPuntenAantal(0);
+					puntenSpeler1.setPuntenText(speler1.getPuntenAantal());
+					speler2.setPuntenAantal(0);
+					puntenSpeler2.setPuntenText(speler2.getPuntenAantal());
+					ping.setActiveScene(2);
 				}
 				break;
 			case RIGHT:
@@ -180,26 +203,49 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 				setBalSnelheid(5);
 				speler1.setPuntenAantal(speler1.getPuntenAantal() + 1);
 				puntenSpeler1.setPuntenText(speler1.getPuntenAantal());
-				if(BalToevoegen.getAantalBallen() > 1) {
+				if (BalToevoegen.getAantalBallen() > 1) {
 					remove();
 					BalToevoegen.SetAantalBallen(BalToevoegen.getAantalBallen() - 1);
 				}
+				if (checkGewonnen()) {
+					speler1.setPuntenAantal(0);
+					puntenSpeler1.setPuntenText(speler1.getPuntenAantal());
+					speler2.setPuntenAantal(0);
+					puntenSpeler2.setPuntenText(speler2.getPuntenAantal());
+					ping.setActiveScene(2);
+				}
 				break;
-		default:
-			break;
+			default:
+				break;
 			}
-		} else {
-			
+		} else if (Ping.getSpelerAantal() == 1) {
+			switch (border) {
+			case RIGHT:
+				speler1.setPuntenAantal(0);
+				puntenSpeler1.setPuntenText(speler1.getPuntenAantal());
+				ping.setActiveScene(4);
+				break;
+			default:
+				break;
+			}
 		}
 	}
 
 	@Override
 	public void onPressedKeysChange(Set<KeyCode> pressedKeys) {
-		if (pressedKeys.contains(KeyCode.R)) {
+		if (pressedKeys.contains(KeyCode.R) && ping.getSpelerAantal() == 2) {
 			setAnchorLocation(location);
 			richting = getStartRichting();
 			setAantalBalTouches(0);
 			setBalSnelheid(5);
+		}
+	}
+
+	public boolean checkGewonnen() {
+		if (speler1.getPuntenAantal() >= 10 || speler2.getPuntenAantal() >= 10) {
+			return true;
+		} else {
+			return false;
 		}
 	}
 }

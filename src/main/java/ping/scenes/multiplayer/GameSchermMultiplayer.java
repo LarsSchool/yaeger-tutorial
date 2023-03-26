@@ -20,15 +20,15 @@ import ping.entities.speler.Speler2;
 
 
 
-public class GameSchermMultiplayer extends DynamicScene implements EntitySpawnerContainer, UpdateExposer {
+public class GameSchermMultiplayer extends DynamicScene implements EntitySpawnerContainer {
 	
 	//SCOREBORD
 	private PuntenSpeler1 puntenSpeler1;
 	private PuntenSpeler2 puntenSpeler2;
 	
 	// SPELERS
-	private Speler speler1;
-	private Speler speler2;
+	private Speler1 speler1;
+	private Speler2 speler2;
 	
 	private Middenlijn middenlijn;
 	
@@ -60,6 +60,7 @@ public class GameSchermMultiplayer extends DynamicScene implements EntitySpawner
 				new Size(30, 130), puntenSpeler2);
 		addEntity(speler2);
 		
+		//Zet de punten op 0
 		puntenSpeler1.setPuntenText(speler1.getPuntenAantal());
 		puntenSpeler2.setPuntenText(speler2.getPuntenAantal());
 		
@@ -68,7 +69,7 @@ public class GameSchermMultiplayer extends DynamicScene implements EntitySpawner
 				new Size(40, getHeight()));
 		addEntity(middenlijn);
 		
-		Bal bal = new Bal("sprites/bal.png", new Coordinate2D(getWidth()/2 - (30/2), getHeight()/2 - (30/2)), new Size(30,30), speler1, speler2, puntenSpeler1, puntenSpeler2, middenlijn);
+		Bal bal = new Bal(ping, "sprites/bal.png", new Coordinate2D(getWidth()/2 - (30/2), getHeight()/2 - (30/2)), new Size(30,30), speler1, speler2, puntenSpeler1, puntenSpeler2, middenlijn);
 		addEntity(bal);
 
 		// ALLE BORDERS TOEVOEGEN
@@ -94,11 +95,7 @@ public class GameSchermMultiplayer extends DynamicScene implements EntitySpawner
 
 	@Override
 	public void setupEntitySpawners() {
-		PowerUpSpawner powerupSpawner = new PowerUpSpawner(500, this.getWidth(), this.getHeight(), speler1, speler2, puntenSpeler1, puntenSpeler2, middenlijn);
+		PowerUpSpawner powerupSpawner = new PowerUpSpawner(ping, 50, this.getWidth(), this.getHeight(), speler1, speler2, puntenSpeler1, puntenSpeler2, middenlijn);
 		addEntitySpawner(powerupSpawner);
-	}
-
-	@Override
-	public void explicitUpdate(long timestamp) {
 	}
 }

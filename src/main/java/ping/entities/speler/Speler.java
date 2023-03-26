@@ -4,20 +4,18 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 
-import ping.entities.scorebord.PuntenSpeler2;
-
 public abstract class  Speler extends DynamicSpriteEntity {
 	
-	private static Size size;
+	private Size size;
 
 	public Speler(String resource, Coordinate2D initialLocation, Size size) {
 		super(resource, initialLocation, size);
 		this.size = size;
 	}
 	
-	public static void setHeight(double waarde) {
-		//de getWidth werkt niet, dus vandaar de 30
+	public void setHeight(double waarde){
 		size = new Size(30, waarde);
+		System.out.println(size);
 	}
 	
 	public void setWidth(double waarde) {

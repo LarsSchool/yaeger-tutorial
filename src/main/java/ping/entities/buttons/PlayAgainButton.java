@@ -27,7 +27,11 @@ public class PlayAgainButton extends TextEntity
 
 	@Override
 	public void onMouseButtonPressed(MouseButton button, Coordinate2D coordinate2D){
-	    ping.setActiveScene(1);
+		if(ping.getSpelerAantal() == 2) {
+		    ping.setActiveScene(1);
+		} else if(ping.getSpelerAantal() == 1) {
+		    ping.setActiveScene(3);
+		}
 	}
 
 	@Override

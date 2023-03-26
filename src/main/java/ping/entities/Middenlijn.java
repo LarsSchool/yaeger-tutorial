@@ -9,8 +9,6 @@ import javafx.scene.paint.Color;
 
 public class Middenlijn extends DynamicRectangleEntity {
 	
-	private Point2D locatie;
-
 	public Middenlijn(Coordinate2D initialPosition, Size size) {
 		super(initialPosition, size);
 		setFill(Color.WHITE);
@@ -19,7 +17,6 @@ public class Middenlijn extends DynamicRectangleEntity {
 	public void middenlijnExpand(double waarde, double waarde2) {
 		this.setWidth(waarde);
 		this.setAnchorLocationX(this.getAnchorLocation().getX() - (waarde2/2));
-
 	}
 	
 

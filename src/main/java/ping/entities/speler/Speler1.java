@@ -26,7 +26,7 @@ public class Speler1 extends Speler implements KeyListener, Collided, Collider {
 	public void onPressedKeysChange(Set<KeyCode> pressedKeys) {
 		if (Ping.getSpelerAantal() == 1) {
 			if (pressedKeys.contains(KeyCode.UP)) {
-				setMotion(4, 180d);
+			setMotion(4, 180d);
 			} else if (pressedKeys.contains(KeyCode.DOWN)) {
 				setMotion(4, 0d);
 			} else if (pressedKeys.contains(KeyCode.W)) {
@@ -79,7 +79,7 @@ public class Speler1 extends Speler implements KeyListener, Collided, Collider {
 			}
 		}
 	}
-
+	
 	@Override
 	public void setPuntenAantal(int waarde) {
 		puntenAantal = waarde;
