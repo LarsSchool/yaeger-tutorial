@@ -7,17 +7,18 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
-public class PuntenText extends TextEntity{
+public class PuntenSpeler1 extends TextEntity{
 
-    public PuntenText(Coordinate2D initialPosition) {
+    public PuntenSpeler1(Coordinate2D initialPosition) {
         super(initialPosition);
 
         setFont(Font.font("Roboto", FontWeight.BOLD, 50));
         setFill(Color.GOLD);
     }
 
-    public void setPuntenText(final String punten) {
-        setText(punten);
+    public void setPuntenText(final int punten) {
+        setText("" + punten);
         System.out.println(punten);
     }
 }
+

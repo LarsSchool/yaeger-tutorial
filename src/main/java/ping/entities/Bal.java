@@ -18,6 +18,8 @@ import ping.entities.speler.Speler;
 import ping.entities.speler.Speler1;
 import ping.entities.speler.Speler2;
 import ping.entities.powerups.BalToevoegen;
+import ping.entities.scorebord.PuntenSpeler1;
+import ping.entities.scorebord.PuntenSpeler2;
 
 public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTouchingWatcher, KeyListener {
 
@@ -27,21 +29,20 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 	private Coordinate2D location;
 	private static int balSnelheid;
 	
-	private static Speler speler1;
-	private static Speler speler2;
+	private Speler speler1;
+	private Speler speler2;
+	
+	private PuntenSpeler1 puntenSpeler1;
+	private PuntenSpeler2 puntenSpeler2;
+	
+	private Middenlijn middenlijn;
+
 
 	private boolean speler1Aangeraakt = false;
 	private boolean speler2Aangeraakt = false;
 
-	public Bal(String resource, Coordinate2D initialLocation, Size size) {
-		super(resource, initialLocation, size);
-		richting = getStartRichting();
-		balSnelheid = 5;
-		setMotion(balSnelheid, richting);
-		this.location = initialLocation;
-	}
 	
-	public Bal(String resource, Coordinate2D initialLocation, Size size, Speler speler1, Speler speler2) {
+	public Bal(String resource, Coordinate2D initialLocation, Size size, Speler speler1, Speler speler2, PuntenSpeler1 puntenSpeler1, PuntenSpeler2 puntenSpeler2, Middenlijn middenlijn) {
 		super(resource, initialLocation, size);
 		richting = getStartRichting();
 		balSnelheid = 5;
@@ -49,7 +50,17 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 		this.location = initialLocation;
 		this.speler1 = speler1;
 		this.speler2 = speler2;
+		this.puntenSpeler1 = puntenSpeler1;
+		this.puntenSpeler2 = puntenSpeler2;
+		this.middenlijn = middenlijn;
 	}
+
+//	public Bal(String resource, Coordinate2D initialLocation, Size size) {
+//		super(resource, initialLocation, size);
+//		richting = getStartRichting();
+//		balSnelheid = 5;
+//		setMotion(balSnelheid, richting);
+//		}
 
 	public static void setBalSnelheid(int waarde) {
 		balSnelheid = waarde;
@@ -137,10 +148,12 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 			speler1Aangeraakt = true;
 			speler2Aangeraakt = false;
 			aantalBalTouches++;
+			middenlijn.middenlijnExpand(middenlijn.getWidth() + 10, 10);
 		} else if (collidingObject instanceof Speler2 && !speler2Aangeraakt) {
 			speler2Aangeraakt = true;
 			speler1Aangeraakt = false;
 			aantalBalTouches++;
+			middenlijn.middenlijnExpand(middenlijn.getWidth() + 10, 10);
 		}
 	}
 
@@ -154,6 +167,7 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 				setAantalBalTouches(0);
 				setBalSnelheid(5);
 				speler2.setPuntenAantal(speler2.getPuntenAantal() + 1);
+				puntenSpeler2.setPuntenText(speler2.getPuntenAantal());
 				if(BalToevoegen.getAantalBallen() > 1) {
 					remove();
 					BalToevoegen.SetAantalBallen(BalToevoegen.getAantalBallen() - 1);
@@ -165,6 +179,7 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 				setAantalBalTouches(0);
 				setBalSnelheid(5);
 				speler1.setPuntenAantal(speler1.getPuntenAantal() + 1);
+				puntenSpeler1.setPuntenText(speler1.getPuntenAantal());
 				if(BalToevoegen.getAantalBallen() > 1) {
 					remove();
 					BalToevoegen.SetAantalBallen(BalToevoegen.getAantalBallen() - 1);

@@ -11,12 +11,14 @@ import javafx.scene.input.KeyCode;
 import ping.Ping;
 import ping.entities.Border;
 import ping.entities.powerups.GrootteSpeler;
+import ping.entities.scorebord.PuntenSpeler1;
+import ping.entities.scorebord.PuntenSpeler2;
 
 public class Speler1 extends Speler implements KeyListener, Collided, Collider {
 	private static boolean inverted = false;
 	private static int puntenAantal = 0;
 
-	public Speler1(Coordinate2D location, Size size) {
+	public Speler1(Coordinate2D location, Size size, PuntenSpeler1 puntenSpeler1) {
 		super("sprites/player_1.png", location, size);
 	}
 
@@ -78,11 +80,13 @@ public class Speler1 extends Speler implements KeyListener, Collided, Collider {
 		}
 	}
 
-	public static void setPuntenAantal(int waarde) {
+	@Override
+	public void setPuntenAantal(int waarde) {
 		puntenAantal = waarde;
 	}
-
-	public static int getPuntenAantal() {
+	
+	@Override
+	public int getPuntenAantal() {
 		return puntenAantal;
 	}
 }

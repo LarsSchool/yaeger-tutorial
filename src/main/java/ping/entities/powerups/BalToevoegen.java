@@ -17,7 +17,6 @@ public class BalToevoegen extends PowerUp{
     }
 
     public void doPowerUp(){
-//        aantalBallen++;
     	PowerUpSpawner.spawnNewBal();
     	aantalBallen++;
     	remove();

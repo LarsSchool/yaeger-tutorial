@@ -8,7 +8,7 @@ import com.github.hanyaeger.api.userinput.KeyListener;
 import javafx.scene.input.KeyCode;
 import ping.Ping;
 import ping.entities.Border;
-import ping.entities.scorebord.PuntenText;
+import ping.entities.scorebord.PuntenSpeler2;
 
 import java.util.Set;
 
@@ -17,8 +17,8 @@ public class Speler2 extends Speler implements KeyListener, Collided, Collider {
 	private static int puntenAantal = 0;
 
 	// constructor van speler 2
-	public Speler2(Coordinate2D location, Size size, PuntenText puntenSpeler2) {
-		super("sprites/player_2.png", location, size, puntenSpeler2);
+	public Speler2(Coordinate2D location, Size size, PuntenSpeler2 puntenSpeler2) {
+		super("sprites/player_2.png", location, size);
 	}
 
 	@Override
@@ -69,6 +69,7 @@ public class Speler2 extends Speler implements KeyListener, Collided, Collider {
 		}
 	}
 	
+	@Override
 	public void setPuntenAantal(int waarde) {
 		puntenAantal = waarde;
 	}
