@@ -31,7 +31,10 @@ public class TitelScherm extends StaticScene{
 	    var pingText = new TextEntity(
 	        new Coordinate2D(getWidth() / 2, getHeight() / 8),
 	        "Ping"
-	    );
+	    );	    
+	    
+	    pingText.setFont(Font.font("Helvetica", 40));
+	    
 	    SingleplayerButton singleplayerButton =
 				new SingleplayerButton(new Coordinate2D((getWidth()/8 * 3) + 50, (getHeight()/6 * 4) + 40), ping);
 

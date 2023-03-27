@@ -17,6 +17,7 @@ import ping.Ping;
 import ping.entities.speler.Speler;
 import ping.entities.speler.Speler1;
 import ping.entities.speler.Speler2;
+import ping.scenes.multiplayer.GameOverMultiplayer;
 import ping.entities.powerups.BalToevoegen;
 import ping.entities.scorebord.PuntenSpeler1;
 import ping.entities.scorebord.PuntenSpeler2;
@@ -193,6 +194,7 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 					puntenSpeler1.setPuntenText(speler1.getPuntenAantal());
 					speler2.setPuntenAantal(0);
 					puntenSpeler2.setPuntenText(speler2.getPuntenAantal());
+					GameOverMultiplayer.setGewonnenSpeler(2);
 					ping.setActiveScene(2);
 				}
 				break;
@@ -212,6 +214,7 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 					puntenSpeler1.setPuntenText(speler1.getPuntenAantal());
 					speler2.setPuntenAantal(0);
 					puntenSpeler2.setPuntenText(speler2.getPuntenAantal());
+					GameOverMultiplayer.setGewonnenSpeler(1);
 					ping.setActiveScene(2);
 				}
 				break;

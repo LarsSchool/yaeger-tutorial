@@ -16,9 +16,9 @@ public class SnelheidAanpassen extends PowerUp {
     }
 
     public void doPowerUp(){
-        int nieuweSnelheid = getRandom(5) + 2;
+        int nieuweSnelheid = getRandom(5) + 5;
         while(nieuweSnelheid > 7 || nieuweSnelheid < 2 || Bal.getBalSnelheid() == nieuweSnelheid){
-            nieuweSnelheid = getRandom(5) + 2;
+            nieuweSnelheid = getRandom(5) + 5;
         }
         Bal.setBalSnelheid(nieuweSnelheid);
 		// haalt power up weg
