@@ -1,7 +1,7 @@
 package ping;
+
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
-
 import ping.scenes.TitelScherm;
 import ping.scenes.multiplayer.GameOverMultiplayer;
 import ping.scenes.multiplayer.GameSchermMultiplayer;

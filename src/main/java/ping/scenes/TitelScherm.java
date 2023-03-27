@@ -23,7 +23,6 @@ public class TitelScherm extends StaticScene{
 	@Override
 	public void setupScene(){
 		setBackgroundImage("backgrounds/pong-video-game.gif");
-		
 	}
 
 	@Override

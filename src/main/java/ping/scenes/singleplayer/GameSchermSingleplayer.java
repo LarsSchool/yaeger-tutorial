@@ -37,7 +37,6 @@ public class GameSchermSingleplayer extends DynamicScene implements EntitySpawne
 		addEntity(muur);
 		
 		//SCOREBORD
-		//MET HERMAN NAAR DE PUNTEN KIJKEN, GEEN IDEE HOE DIT PRECIES WERKT, florian heeft even gekeken--------------------------------------------------------------------------------------------
 		PuntenSpeler1 puntenSpeler1 = new PuntenSpeler1(new Coordinate2D(getWidth()/2, getHeight()/8));
 		addEntity(puntenSpeler1);
 
