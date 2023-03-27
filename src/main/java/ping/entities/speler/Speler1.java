@@ -18,7 +18,7 @@ public class Speler1 extends Speler implements KeyListener, Collided, Collider {
 	private static boolean inverted = false;
 	private static int puntenAantal = 0;
 
-	public Speler1(Coordinate2D location, Size size, PuntenSpeler1 puntenSpeler1) {
+	public Speler1(Coordinate2D location, Size size) {
 		super("sprites/player_1.png", location, size);
 	}
 

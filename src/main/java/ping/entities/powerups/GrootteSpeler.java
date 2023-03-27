@@ -22,10 +22,10 @@ public class GrootteSpeler extends PowerUp {
 	public void doPowerUp() {
 		int random = getRandom(2);
 		int randomWaarde = getRandom(7) + 8;
-//		speler1.setHeight(randomWaarde * 10);
-//		speler2.setHeight(randomWaarde * 10);
-		//speler1 = new Speler1(speler1.getAnchorLocation(), new Size(speler1.getWidth(), randomWaarde));
-		//speler2 = new Speler2(speler2.getAnchorLocation(), new Size(speler2.getWidth(), randomWaarde));
+		speler1.setHeight(randomWaarde * 10);
+		speler2.setHeight(randomWaarde * 10);
+		speler1 = new Speler1(speler1.getAnchorLocation(), new Size(speler1.getWidth(), randomWaarde));
+		speler2 = new Speler2(speler2.getAnchorLocation(), new Size(speler2.getWidth(), randomWaarde));
 
 		remove();
 	}
