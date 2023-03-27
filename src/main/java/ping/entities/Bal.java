@@ -112,27 +112,51 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 	@Override
 	public void onCollision(Collider collidingObject) {
 		if (collidingObject instanceof Border) {
-//			if(richting > 270 && richting < 90) {
-//				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX(), this.getAnchorLocation().getY() - 5);
-//				setAnchorLocation(locatie);
-//			} else {
-//				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX(), this.getAnchorLocation().getY() + 5);
-//				setAnchorLocation(locatie);
-//			}
-
-			// maken dat hij berekend met welke hoek hij moet terugstuiteren, dus
-			// bijvoorbeeld 360 - 270 = 90, dus dan moet hij met 90 terugstuiteren.
-			richting += 45 + getAfwijking(3);
+			if (richting > 270 || richting < 90) {
+				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX(),
+						this.getAnchorLocation().getY() - 10);
+				setAnchorLocation(locatie);
+			} else if (richting <= 270 && richting >= 90) {
+				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX(),
+						this.getAnchorLocation().getY() + 10);
+				setAnchorLocation(locatie);
+			}
+			
+			if (richting <= 90 || richting >= 270) {
+				richting = (270 - (richting - 270)) + getAfwijking(3);
+			} else if ((richting > 90 && richting < 270)) {
+				richting = (90 - (richting - 90)) + getAfwijking(3);
+			}
+			
 			if (richting > 359) {
 				richting -= 360;
 			}
-
+			
+			System.out.println("Richting in de border" + richting);
 			setMotion(balSnelheid, richting);
 		} else if (collidingObject instanceof SingleplayerMuur) {
-			richting += 45 + getAfwijking(2);
+			//dit zorgt ervoor dat de bal goed terug stuitert
+			if (richting >= 0 && richting <= 180) {
+				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX() - 10,
+						this.getAnchorLocation().getY());
+				setAnchorLocation(locatie);
+			} else if (richting > 180) {
+				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX() + 10,
+						this.getAnchorLocation().getY());
+				setAnchorLocation(locatie);
+			}
+			
+			if (richting <= 180 && richting >= 0) {
+				richting = (360 - (richting - 0)) + getAfwijking(3);
+			} else if (richting <= 360 && richting > 180) {
+				richting = (180 - (richting - 180)) + getAfwijking(3);
+			}
 			if (richting > 359) {
 				richting -= 360;
+			} else if(richting < 0) {
+				richting += 360;
 			}
+			System.out.println("Richting in de singleplayermuur" + richting);
 			setMotion(balSnelheid, richting);
 		} else if (collidingObject instanceof Speler) {
 			if (richting > 0 && richting < 180) {
@@ -144,13 +168,26 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 						this.getAnchorLocation().getY());
 				setAnchorLocation(locatie);
 			}
+
+			// als de bal een richting heeft van tussen de 45 en 135 graden, moet hier 180
+			// graden bijkomen (zodat de bal ook mooi teruggestuiterd kan worden.)
 			if ((richting > 45 && richting < 135) || (richting > 225 && richting < 315)) {
 				richting += 180 + getAfwijking(40);
 			} else {
-				richting += 90 + getAfwijking(40);
+				if (richting >= 0 && richting < 45) {
+					richting -= 90 + getAfwijking(40);
+				} else if (richting <= 360 && richting > 315) {
+					richting += 90 + getAfwijking(40);
+				} else if (richting >= 135 && richting <= 180) {
+					richting += 90 + getAfwijking(40);
+				} else if (richting <= 225 && richting > 180) {
+					richting -= 90 + getAfwijking(40);
+				}
 			}
 			if (richting > 359) {
 				richting -= 360;
+			} else if (richting < 0) {
+				richting += 360;
 			}
 			setMotion(balSnelheid, richting);
 			if (Ping.getSpelerAantal() == 2) {
