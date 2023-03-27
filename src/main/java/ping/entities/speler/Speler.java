@@ -15,7 +15,6 @@ public abstract class  Speler extends DynamicSpriteEntity {
 	
 	public void setHeight(double waarde){
 		size = new Size(30, waarde);
-		System.out.println(size);
 	}
 	
 	public void setWidth(double waarde) {

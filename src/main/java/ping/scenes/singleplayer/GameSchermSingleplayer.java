@@ -43,7 +43,7 @@ public class GameSchermSingleplayer extends DynamicScene implements EntitySpawne
 
 		// spelers
 		Speler speler1 = new Speler1(new Coordinate2D(getWidth() - getWidth() / 20 - 10, getHeight() / 2 - 70),
-				new Size(40, 150), puntenSpeler1);
+				new Size(40, 150));
 		addEntity(speler1);
 		
 		puntenSpeler1.setPuntenText(speler1.getPuntenAantal());

@@ -54,10 +54,10 @@ public class GameSchermMultiplayer extends DynamicScene implements EntitySpawner
 
 		// SPELERS
 		speler1 = new Speler1(new Coordinate2D(getWidth() / 20 - 30, getHeight() / 2 - 70),
-				new Size(30, 130), puntenSpeler1);
+				new Size(30, 130));
 		addEntity(speler1);
 		speler2 = new Speler2(new Coordinate2D(getWidth() - getWidth() / 20 - 10, getHeight() / 2 - 70),
-				new Size(30, 130), puntenSpeler2);
+				new Size(30, 130));
 		addEntity(speler2);
 		
 		//Zet de punten op 0
