@@ -3,7 +3,6 @@ package ping.entities.powerups;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 
-import ping.entities.speler.Speler;
 import ping.entities.speler.Speler1;
 import ping.entities.speler.Speler2;
 
@@ -20,12 +19,9 @@ public class GrootteSpeler extends PowerUp {
 	}
 
 	public void doPowerUp() {
-		int random = getRandom(2);
 		int randomWaarde = getRandom(7) + 8;
 		speler1.setHeight(randomWaarde * 10);
 		speler2.setHeight(randomWaarde * 10);
-//		speler1 = new Speler1(speler1.getAnchorLocation(), new Size(speler1.getWidth(), randomWaarde));
-//		speler2 = new Speler2(speler2.getAnchorLocation(), new Size(speler2.getWidth(), randomWaarde));
 
 		remove();
 	}

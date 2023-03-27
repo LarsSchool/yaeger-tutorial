@@ -9,9 +9,7 @@ import ping.Ping;
 import ping.entities.Bal;
 import ping.entities.Border;
 import ping.entities.SingleplayerMuur;
-import ping.entities.scorebord.PuntenSpeler1;
-import ping.entities.scorebord.PuntenSpeler2;
-import ping.entities.speler.Speler;
+import ping.entities.scorebord.ScoreTekst;
 import ping.entities.speler.Speler1;
 
 public class GameSchermSingleplayer extends DynamicScene implements EntitySpawnerContainer {
@@ -37,15 +35,15 @@ public class GameSchermSingleplayer extends DynamicScene implements EntitySpawne
 		addEntity(muur);
 		
 		//SCOREBORD
-		PuntenSpeler1 puntenSpeler1 = new PuntenSpeler1(new Coordinate2D(getWidth()/2, getHeight()/8));
+		ScoreTekst puntenSpeler1 = new ScoreTekst(new Coordinate2D(getWidth()/2, getHeight()/8));
 		addEntity(puntenSpeler1);
 
 		// spelers
-		Speler speler1 = new Speler1(new Coordinate2D(getWidth() - getWidth() / 20 - 10, getHeight() / 2 - 70),
+		Speler1 speler1 = new Speler1(new Coordinate2D(getWidth() - getWidth() / 20 - 10, getHeight() / 2 - 70),
 				new Size(40, 150));
 		addEntity(speler1);
 		
-		puntenSpeler1.setPuntenText(speler1.getPuntenAantal());
+		puntenSpeler1.setPuntenText(Speler1.getPuntenAantal());
 		
 		// bal
 		Bal bal = new Bal(ping, "sprites/bal.png", new Coordinate2D(getWidth()/2 - (30/2), getHeight()/2 - (30/2)), new Size(30,30), speler1, puntenSpeler1);
@@ -65,6 +63,9 @@ public class GameSchermSingleplayer extends DynamicScene implements EntitySpawne
 		Border borderRechtsOnder = new Border("sprites/border.png", new Coordinate2D(getWidth() / 2, getHeight() - 20),
 				new Size(getWidth() / 2, 20));
 			addEntity(borderRechtsOnder);
+			
+			speler1.setPuntenAantal(0);
+			puntenSpeler1.setPuntenText(Speler1.getPuntenAantal());
 	}
 
 	@Override

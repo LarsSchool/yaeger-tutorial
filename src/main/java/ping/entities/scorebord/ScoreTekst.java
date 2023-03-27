@@ -7,9 +7,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
-public class PuntenSpeler2 extends TextEntity{
+public class ScoreTekst extends TextEntity{
+	
+	private int puntenAantal;
 
-    public PuntenSpeler2(Coordinate2D initialPosition) {
+    public ScoreTekst(Coordinate2D initialPosition) {
         super(initialPosition);
 
         setFont(Font.font("Roboto", FontWeight.BOLD, 50));
@@ -17,7 +19,12 @@ public class PuntenSpeler2 extends TextEntity{
     }
 
     public void setPuntenText(final int punten) {
+    	puntenAantal = punten;
         setText("" + punten);
     }
+
+	public int getPuntenAantal() {
+		return puntenAantal;
+	}
 }
 
