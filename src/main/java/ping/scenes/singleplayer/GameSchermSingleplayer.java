@@ -1,10 +1,8 @@
 package ping.scenes.singleplayer;
 
 import com.github.hanyaeger.api.Coordinate2D;
-import com.github.hanyaeger.api.EntitySpawnerContainer;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.scenes.DynamicScene;
-
 import ping.Ping;
 import ping.entities.Bal;
 import ping.entities.Border;
@@ -12,9 +10,9 @@ import ping.entities.SingleplayerMuur;
 import ping.entities.scorebord.ScoreTekst;
 import ping.entities.speler.Speler1;
 
-public class GameSchermSingleplayer extends DynamicScene implements EntitySpawnerContainer {
+public class GameSchermSingleplayer extends DynamicScene{
 
-	Ping ping;
+	private Ping ping;
 
 	public GameSchermSingleplayer(Ping ping) {
 		this.ping = ping;
@@ -67,10 +65,4 @@ public class GameSchermSingleplayer extends DynamicScene implements EntitySpawne
 			speler1.setPuntenAantal(0);
 			puntenSpeler1.setPuntenText(Speler1.getPuntenAantal());
 	}
-
-	@Override
-	public void setupEntitySpawners() {
-
-	}
-
 }

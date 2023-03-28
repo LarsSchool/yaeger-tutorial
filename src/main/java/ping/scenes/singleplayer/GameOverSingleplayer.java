@@ -12,7 +12,7 @@ import ping.entities.speler.Speler1;
 
 
 public class GameOverSingleplayer extends StaticScene{
-	Ping ping;
+	private Ping ping;
 	
 	private ScoreTekst puntenSpeler1;
 	

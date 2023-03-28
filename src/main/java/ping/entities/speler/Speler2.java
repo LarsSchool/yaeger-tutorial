@@ -17,7 +17,6 @@ public class Speler2 extends SpelerRechthoek implements KeyListener, Collided, C
 
 	// constructor van speler 2
 	public Speler2(Coordinate2D location, Size size) {
-//		super("sprites/player_2.png", location, size);
 		super(location, size);
 
 	}

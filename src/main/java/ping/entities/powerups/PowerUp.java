@@ -1,18 +1,14 @@
 package ping.entities.powerups;
 
 import java.util.Random;
-
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
-
 import ping.entities.Bal;
 
-
 public abstract class  PowerUp extends DynamicSpriteEntity implements Collided {
-    public int powerUpRandom;
     public int aantalBalTouches;
     
     private Random rand = new Random();

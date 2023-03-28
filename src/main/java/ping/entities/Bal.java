@@ -2,7 +2,6 @@ package ping.entities;
 
 import java.util.Random;
 import java.util.Set;
-
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Collided;
@@ -11,7 +10,6 @@ import com.github.hanyaeger.api.entities.SceneBorderTouchingWatcher;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.api.userinput.KeyListener;
-
 import javafx.scene.input.KeyCode;
 import ping.Ping;
 import ping.entities.speler.Speler1;

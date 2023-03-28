@@ -1,7 +1,6 @@
 package ping.entities.speler;
 
 import java.util.Set;
-
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Collided;
@@ -16,7 +15,6 @@ public class Speler1 extends SpelerRechthoek implements KeyListener, Collided, C
 	public static int puntenAantal = 0;
 
 	public Speler1(Coordinate2D location, Size size) {
-//		super("sprites/player_1.png", location, size);
 		super(location, size);
 	}
 

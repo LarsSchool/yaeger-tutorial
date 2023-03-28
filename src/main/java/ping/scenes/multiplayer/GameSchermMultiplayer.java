@@ -28,7 +28,7 @@ public class GameSchermMultiplayer extends DynamicScene implements EntitySpawner
 	
 	private Middenlijn middenlijn;
 	
-	Ping ping;
+	private Ping ping;
 
 	public GameSchermMultiplayer(Ping ping) {
 		this.ping = ping;
@@ -91,7 +91,6 @@ public class GameSchermMultiplayer extends DynamicScene implements EntitySpawner
 		puntenSpeler1.setPuntenText(Speler1.getPuntenAantal());
 		speler2.setPuntenAantal(0);
 		puntenSpeler2.setPuntenText(Speler2.getPuntenAantal());
-
 	}
 
 	@Override

@@ -1,14 +1,13 @@
 package ping.entities.powerups;
 
 import java.util.Random;
-
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 
 
 public class BalToevoegen extends PowerUp{
     public static int aantalBallen;
-	Random rand = new Random();
+	private Random rand = new Random();
 
     public BalToevoegen(String resource, Coordinate2D initialLocation, Size size) {
         super(resource, initialLocation, size);
