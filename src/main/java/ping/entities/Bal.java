@@ -278,7 +278,7 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 				break;
 			}
 		} else if (Ping.getSpelerAantal() == 1) {
-			// Als het singeplayer is, moet het eindscherm van singleplayer komen, want de
+			// Als het singleplayer is, moet het eindscherm van singleplayer komen, want de
 			// persoon heeft dan verloren.
 			switch (border) {
 			case RIGHT:
