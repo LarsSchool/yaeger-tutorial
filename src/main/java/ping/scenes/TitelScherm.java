@@ -51,7 +51,4 @@ public class TitelScherm extends StaticScene{
 	    addEntity(singleplayerButton);
 		addEntity(multiplayerButton);
 	}
-
-	
-	
 }

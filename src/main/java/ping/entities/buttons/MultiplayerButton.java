@@ -42,6 +42,4 @@ public class MultiplayerButton extends TextEntity
 	    setFill(Color.GREEN);
 	    setCursor(Cursor.DEFAULT);
 	}
-
-
 }

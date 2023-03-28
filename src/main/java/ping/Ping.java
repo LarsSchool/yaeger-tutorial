@@ -11,10 +11,6 @@ import ping.scenes.singleplayer.GameSchermSingleplayer;
 public class Ping extends YaegerGame{
 	
 	private static int spelerAantal;
-
-	public Ping() {
-		
-	}
 	
 	public static void main(String[] args){
 	    launch(args);

@@ -42,6 +42,4 @@ public class SingleplayerButton extends TextEntity
 	    setFill(Color.GREEN);
 	    setCursor(Cursor.DEFAULT);
 	}
-
-
 }
