@@ -1,11 +1,9 @@
 package ping.entities.powerups;
 
 import java.util.Random;
-
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.EntitySpawner;
-
 import ping.Ping;
 import ping.entities.Bal;
 import ping.entities.Middenlijn;
@@ -25,7 +23,7 @@ public class PowerUpSpawner extends EntitySpawner {
 
 	private Middenlijn middenlijn;
 
-	Random rand = new Random();
+	private Random rand = new Random();
 	private static boolean spawnNewBal = false;
 	private boolean powerUpGeplaatst = true;
 	private double width;
