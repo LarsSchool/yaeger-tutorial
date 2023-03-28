@@ -22,7 +22,6 @@ public class Ping extends YaegerGame{
 	    setSize(new Size(1200, 750));
 	}
 
-
 	@Override
 	public void setupScenes(){
 	    addScene(0, new TitelScherm(this));
@@ -30,7 +29,6 @@ public class Ping extends YaegerGame{
 	    addScene(2, new GameOverMultiplayer(this));
 	    addScene(3, new GameSchermSingleplayer(this));
 	    addScene(4, new GameOverSingleplayer(this));
-
 	}
 
 	public void setSpelerAantal(int waarde) {

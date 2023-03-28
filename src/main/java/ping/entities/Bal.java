@@ -109,7 +109,6 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 	@Override
 	public void onCollision(Collider collidingObject) {
 		if (collidingObject instanceof Border) {
-			System.out.println("Richting begin if: " + richting);
 			if (richting > 270 || richting < 90) {
 				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX(),
 						this.getAnchorLocation().getY() - 10);
@@ -129,8 +128,7 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 			if (richting > 359) {
 				richting -= 360;
 			}
-			
-			System.out.println("Richting eind if: " + richting);
+
 			setMotion(balSnelheid, richting);
 		} else if (collidingObject instanceof SingleplayerMuur) {
 			//dit zorgt ervoor dat de bal goed terug stuitert

@@ -1,12 +1,8 @@
 package ping.entities.powerups;
 
-
-
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
-
 import ping.entities.Bal;
-
 
 public class SnelheidAanpassen extends PowerUp {
 

@@ -2,13 +2,12 @@ package ping.entities.scorebord;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
-
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
 public class ScoreTekst extends TextEntity{
-	
+
 	private int puntenAantal;
 
     public ScoreTekst(Coordinate2D initialPosition) {
@@ -22,9 +21,5 @@ public class ScoreTekst extends TextEntity{
     	puntenAantal = punten;
         setText("" + punten);
     }
-
-	public int getPuntenAantal() {
-		return puntenAantal;
-	}
 }
 
