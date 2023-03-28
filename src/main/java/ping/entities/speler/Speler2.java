@@ -8,17 +8,18 @@ import com.github.hanyaeger.api.userinput.KeyListener;
 import javafx.scene.input.KeyCode;
 import ping.Ping;
 import ping.entities.Border;
-import ping.entities.scorebord.PuntenSpeler2;
 
 import java.util.Set;
 
-public class Speler2 extends Speler implements KeyListener, Collided, Collider {
+public class Speler2 extends SpelerRechthoek implements KeyListener, Collided, Collider {
 	private static boolean inverted = false;
 	private static int puntenAantal = 0;
 
 	// constructor van speler 2
 	public Speler2(Coordinate2D location, Size size) {
-		super("sprites/player_2.png", location, size);
+//		super("sprites/player_2.png", location, size);
+		super(location, size);
+
 	}
 
 	@Override
@@ -56,12 +57,12 @@ public class Speler2 extends Speler implements KeyListener, Collided, Collider {
 		if (collidingObject instanceof Border) {
 			if (this.getDirection() == 0) {
 				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX(),
-						this.getAnchorLocation().getY() - 2);
+						this.getAnchorLocation().getY() - 5);
 				setAnchorLocation(locatie);
 				setSpeed(0);
 			} else if (this.getDirection() == 180) {
 				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX(),
-						this.getAnchorLocation().getY() + 2);
+						this.getAnchorLocation().getY() + 5);
 				setAnchorLocation(locatie);
 //				setMotion(0, 180d);
 				setSpeed(0);
@@ -69,13 +70,11 @@ public class Speler2 extends Speler implements KeyListener, Collided, Collider {
 		}
 	}
 	
-	@Override
 	public void setPuntenAantal(int waarde) {
 		puntenAantal = waarde;
 	}
 	
-	@Override
-	public int getPuntenAantal() {
+	public static int getPuntenAantal() {
 		return puntenAantal;
 	}
 }

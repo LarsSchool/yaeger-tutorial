@@ -11,12 +11,15 @@ import ping.Ping;
 import ping.entities.buttons.ExitButton;
 import ping.entities.buttons.PlayAgainButton;
 import ping.entities.buttons.SingleplayerButton;
-import ping.entities.scorebord.PuntenSpeler1;
-import ping.entities.scorebord.PuntenSpeler2;
+import ping.entities.scorebord.ScoreTekst;
+import ping.entities.speler.Speler1;
+import ping.entities.speler.Speler2;
 
 
 public class GameOverMultiplayer extends StaticScene{
 	
+	private ScoreTekst puntenSpeler1;
+	private ScoreTekst puntenSpeler2;
 	private Ping ping;
 	private static int gewonnenSpeler;
 	public GameOverMultiplayer(Ping ping) {
@@ -47,6 +50,15 @@ public class GameOverMultiplayer extends StaticScene{
 		addEntity(gewonnenText);
 	    addEntity(exitButton);
 	    addEntity(playAgainButton);
+	    
+	    puntenSpeler1 = new ScoreTekst(new Coordinate2D(getWidth()/2-22, getHeight()/4 + 15));
+		addEntity(puntenSpeler1);
+		
+		puntenSpeler2 = new ScoreTekst(new Coordinate2D(getWidth()/2-22, getHeight()/3 + 15));
+		addEntity(puntenSpeler2);
+
+		puntenSpeler1.setPuntenText(Speler1.getPuntenAantal());
+		puntenSpeler2.setPuntenText(Speler2.getPuntenAantal()); 
 	}
 	
 	public static void setGewonnenSpeler(int waarde) {
