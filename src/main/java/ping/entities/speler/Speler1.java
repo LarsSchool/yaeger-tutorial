@@ -20,6 +20,8 @@ public class Speler1 extends SpelerRechthoek implements KeyListener, Collided, C
 
 	@Override
 	public void onPressedKeysChange(Set<KeyCode> pressedKeys) {
+		
+		// Als er maar 1 speler is, zorg dat alle controls de speler moeten kunnen bewegen.
 		if (Ping.getSpelerAantal() == 1) {
 			if (pressedKeys.contains(KeyCode.UP)) {
 			setMotion(4, 180d);
@@ -32,15 +34,21 @@ public class Speler1 extends SpelerRechthoek implements KeyListener, Collided, C
 			} else {
 				setSpeed(0);
 			}
-		} else if (Ping.getSpelerAantal() == 2 && !inverted) {
-			if (pressedKeys.contains(KeyCode.W)) {
+		} 
+		
+		// Als de controls niet inverted moeten zijn, worden de controls W en S
+		else if (Ping.getSpelerAantal() == 2 && !inverted) {
+				if (pressedKeys.contains(KeyCode.W)) {
 				setMotion(4, 180d);
 			} else if (pressedKeys.contains(KeyCode.S)) {
 				setMotion(4, 0d);
 			} else {
 				setSpeed(0);
 			}
-		} else if (Ping.getSpelerAantal() == 2 && inverted) {
+		} 
+		
+		// Als de controls inverted moeten zijn, worden de controls S en W
+		else if (Ping.getSpelerAantal() == 2 && inverted) {
 			if (pressedKeys.contains(KeyCode.S)) {
 				setMotion(4, 180d);
 			} else if (pressedKeys.contains(KeyCode.W)) {
@@ -50,7 +58,8 @@ public class Speler1 extends SpelerRechthoek implements KeyListener, Collided, C
 			}
 		}
 	}
-
+	
+	// Zorg dat de controls omgedraaid (inverted) worden.
 	public static void invert() {
 		if (inverted) {
 			inverted = false;
@@ -58,7 +67,13 @@ public class Speler1 extends SpelerRechthoek implements KeyListener, Collided, C
 			inverted = true;
 		}
 	}
-
+	
+	// Return de inverted state, zodat deze gereset kan worden indien nodig.
+	public static boolean getInverted() {
+		return inverted;
+	}
+	
+	// Zorg ervoor dat de speler niet door de borders heen kan glitchen
 	@Override
 	public void onCollision(Collider collidingObject) {
 		if (collidingObject instanceof Border) {
@@ -76,10 +91,10 @@ public class Speler1 extends SpelerRechthoek implements KeyListener, Collided, C
 		}
 	}
 	
+	
 	public void setPuntenAantal(int waarde) {
 		puntenAantal = waarde;
 	}
-	
 	
 	public static int getPuntenAantal() {
 		return puntenAantal;

@@ -12,6 +12,7 @@ public class Middenlijn extends DynamicRectangleEntity {
 		setFill(Color.WHITE);
 	}
 	
+	// Deze functie zorgt ervoor dan de middenlijn zich uitbreidt na elke baltouch.
 	public void middenlijnExpand(double waarde, double waarde2) {
 		this.setWidth(waarde);
 		this.setAnchorLocationX(this.getAnchorLocation().getX() - (waarde2/2));

@@ -14,32 +14,36 @@ import javafx.scene.text.FontWeight;
 import ping.Ping;
 
 public class ExitButton extends TextEntity
-		implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener{
-	
+		implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener {
+
 	private Ping ping;
 
-	public ExitButton(Coordinate2D initialLocation, Ping ping){
-	    super(initialLocation,"Exit Game");
-	    this.ping = ping;
-	    setFill(Color.RED);
-	    setFont(Font.font("Roboto", FontWeight.BOLD, 30));
+	public ExitButton(Coordinate2D initialLocation, Ping ping) {
+		super(initialLocation, "Exit Game");
+		this.ping = ping;
+		setFill(Color.RED);
+		setFont(Font.font("Roboto", FontWeight.BOLD, 30));
 	}
 
+	// Dit sluit het programma af
 	@Override
-	public void onMouseButtonPressed(MouseButton button, Coordinate2D coordinate2D){
+	public void onMouseButtonPressed(MouseButton button, Coordinate2D coordinate2D) {
 		ping.quit();
 	}
-
+	
+	
+	// Veranderd de kleur naar oranje en laat zien dat je kan klikken
 	@Override
-	public void onMouseEntered(){
-	    setFill(Color.ORANGE);
-	    setCursor(Cursor.HAND);
+	public void onMouseEntered() {
+		setFill(Color.ORANGE);
+		setCursor(Cursor.HAND);
 	}
-
+	
+	
+	// Veranderd de kleur weer terug
 	@Override
-	public void onMouseExited(){
-	    setFill(Color.RED);
-	    setCursor(Cursor.DEFAULT);
+	public void onMouseExited() {
+		setFill(Color.RED);
+		setCursor(Cursor.DEFAULT);
 	}
 }
-

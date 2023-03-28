@@ -17,12 +17,15 @@ public abstract class  PowerUp extends DynamicSpriteEntity implements Collided {
         super(resource, initialLocation, size);
         aantalBalTouches = Bal.getAantalBalTouches();
     }
-
+    
+    // Als de powerups opgepakt wordt, moet de powerups uitgevoerd worden.
     @Override
     public void onCollision(Collider collidingObject) {
     	doPowerUp();
     }
     
+    // Een functie die een random waarde returnt, omdat er anders elke keer een variabele Random/ rand
+    // aangemaakt zou moeten worden, wat niet heel mooi/ handig is.
     public int getRandom(int waarde) {
 		return rand.nextInt(waarde);
     }

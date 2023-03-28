@@ -17,15 +17,18 @@ public class GrootteSpeler extends PowerUp {
 		this.speler2 = speler2;
 		setMotionPowerUp();
 	}
-
+	
+	// Zorg ervoor dat de hoogte van de spelers vervangen wordt met een random waarde van 80 tot 150
 	public void doPowerUp() {
 		int randomWaarde = getRandom(7) + 8;
 		speler1.setHeight(randomWaarde * 10);
 		speler2.setHeight(randomWaarde * 10);
-
+		
+		// Haalt de powerups van het scherm
 		remove();
 	}
-
+	
+    // Zorg dat als de powerups spawnt, dat deze naar links of rechts gaat bewegen
 	@Override
 	public void setMotionPowerUp() {
 		int random = getRandom(2);

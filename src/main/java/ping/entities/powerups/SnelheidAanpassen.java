@@ -14,17 +14,21 @@ public class SnelheidAanpassen extends PowerUp {
         super(resource, initialLocation, size);
 		setMotionPowerUp();
     }
-
+    
+    // Zorgt ervoor dat de snelheid van de bal een random waarde tussen de 5 en 10 krijgt.
+    // Als de random waarde hetzelfde is als de huidige snelheid, moet er opnieuw gerolt worden.
     public void doPowerUp(){
         int nieuweSnelheid = getRandom(5) + 5;
         while(nieuweSnelheid > 7 || nieuweSnelheid < 2 || Bal.getBalSnelheid() == nieuweSnelheid){
             nieuweSnelheid = getRandom(5) + 5;
         }
         Bal.setBalSnelheid(nieuweSnelheid);
-		// haalt power up weg
+        
+		// Haalt de powerups van het scherm
     	remove();
     }
-
+    
+    // Zorg dat als de powerups spawnt, dat deze naar links of rechts gaat bewegen
 	@Override
 	public void setMotionPowerUp() {
 		int random = getRandom(2);

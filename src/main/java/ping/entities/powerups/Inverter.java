@@ -15,6 +15,7 @@ public class Inverter extends PowerUp implements Collided {
 		setMotionPowerUp();
 	}
 
+    // Zorg dat als de invert-powerups opgepakt wordt, de andere speler geïnvert wordt.
 	@Override
 	public void onCollision(Collider collidingObject) {
 		if (collidingObject instanceof Speler1) {
@@ -24,16 +25,17 @@ public class Inverter extends PowerUp implements Collided {
 		}
 		doPowerUp();
 	}
-
+	
 	public void doPowerUp() {
-		// haalt power up weg
+		// Haalt de powerups van het scherm
 		remove();
 	}
 
 	public int getInvert() {
 		return invert;
 	}
-
+	
+    // Zorg dat als de powerups spawnt, dat deze naar links of rechts gaat bewegen
 	@Override
 	public void setMotionPowerUp() {
 		int random = getRandom(2);

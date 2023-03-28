@@ -17,7 +17,8 @@ public class ScoreTekst extends TextEntity{
         setFont(Font.font("Roboto", FontWeight.BOLD, 50));
         setFill(Color.GOLD);
     }
-
+    
+    // Pas de text aan naar wat meegegeven wordt.
     public void setPuntenText(final int punten) {
     	puntenAantal = punten;
         setText("" + punten);

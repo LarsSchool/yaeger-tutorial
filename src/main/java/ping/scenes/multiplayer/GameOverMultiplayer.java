@@ -60,6 +60,7 @@ public class GameOverMultiplayer extends StaticScene{
 		puntenSpeler2.setPuntenText(Speler2.getPuntenAantal()); 
 	}
 	
+	// Zorgt dat de juiste speler gedisplayed wordt op het game over scherm (De winnaar).
 	public static void setGewonnenSpeler(int waarde) {
 		gewonnenSpeler = waarde;
 	}

@@ -24,19 +24,22 @@ public class SingleplayerButton extends TextEntity
 	    setFill(Color.GREEN);
 	    setFont(Font.font("Roboto", FontWeight.BOLD, 30));
 	}
-
+	
+	// Zet het scherm naar het singleplayer speel scherm en zet speleraantal naar 1
 	@Override
 	public void onMouseButtonPressed(MouseButton button, Coordinate2D coordinate2D){
 	    ping.setActiveScene(3);
 	    ping.setSpelerAantal(1);
 	}
-
+	
+	// Veranderd de kleur naar lichtgroen en laat zien dat je kan klikken
 	@Override
 	public void onMouseEntered(){
 	    setFill(Color.LIGHTGREEN);
 	    setCursor(Cursor.HAND);
 	}
-
+	
+	// Veranderd de kleur weer terug
 	@Override
 	public void onMouseExited(){
 	    setFill(Color.GREEN);

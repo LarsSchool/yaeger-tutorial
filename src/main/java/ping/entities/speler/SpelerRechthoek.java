@@ -4,8 +4,9 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.impl.DynamicRectangleEntity;
 
-public abstract class  SpelerRechthoek extends DynamicRectangleEntity {
-	
+public abstract class SpelerRechthoek extends DynamicRectangleEntity {
+
+	//KAN DEZE KLASSE NIET GEWOON WEG?
 //	private Size size;
 
 	public SpelerRechthoek(Coordinate2D initialLocation, Size size) {
@@ -15,10 +16,6 @@ public abstract class  SpelerRechthoek extends DynamicRectangleEntity {
 //	
 //	public double getHeight(){
 //		return size.height();
-//	}
-//	
-//	public double getWidth(){
-//		return size.width();
 //	}
 //
 //	

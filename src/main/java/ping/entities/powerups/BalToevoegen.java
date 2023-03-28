@@ -14,17 +14,25 @@ public class BalToevoegen extends PowerUp{
         aantalBallen = 1;
 		setMotionPowerUp();
     }
-
+    
+    // Zorg ervoor dat er een nieuwe bal spawnt.
     public void doPowerUp(){
-    	PowerUpSpawner.spawnNewBal();
     	aantalBallen++;
+    	PowerUpSpawner.spawnNewBal();
+    	
+		// Haalt de powerups van het scherm
     	remove();
     }
-
+    
     public static int getAantalBallen(){
         return aantalBallen;
     }
-
+    
+	public static void SetAantalBallen(int waarde) {
+		aantalBallen = waarde;
+	}
+    
+    // Zorg dat als de powerups spawnt, dat deze naar links of rechts gaat bewegen
 	@Override
 	public void setMotionPowerUp() {
 		int random = rand.nextInt(2);
@@ -35,7 +43,4 @@ public class BalToevoegen extends PowerUp{
 		}
 	}
 
-	public static void SetAantalBallen(int waarde) {
-		aantalBallen = waarde;
-	}
 }

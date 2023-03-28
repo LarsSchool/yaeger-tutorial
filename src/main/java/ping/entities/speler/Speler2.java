@@ -15,7 +15,6 @@ public class Speler2 extends SpelerRechthoek implements KeyListener, Collided, C
 	private static boolean inverted = false;
 	private static int puntenAantal = 0;
 
-	// constructor van speler 2
 	public Speler2(Coordinate2D location, Size size) {
 		super(location, size);
 
@@ -23,7 +22,8 @@ public class Speler2 extends SpelerRechthoek implements KeyListener, Collided, C
 
 	@Override
 	public void onPressedKeysChange(Set<KeyCode> pressedKeys) {
-		// zorgt voor beweging speler 2 met de pijltjes
+		
+		// Als de controls niet inverted moeten zijn, worden de controls W en S
 		if (Ping.getSpelerAantal() == 2 && !inverted) {
 			if (pressedKeys.contains(KeyCode.UP)) {
 				setMotion(4, 180d);
@@ -32,7 +32,10 @@ public class Speler2 extends SpelerRechthoek implements KeyListener, Collided, C
 			} else {
 				setSpeed(0);
 			}
-		} else if (Ping.getSpelerAantal() == 2 && inverted) {
+		} 
+		
+		// Als de controls niet inverted moeten zijn, worden de controls W en S
+		else if (Ping.getSpelerAantal() == 2 && inverted) {
 			if (pressedKeys.contains(KeyCode.DOWN)) {
 				setMotion(4, 180d);
 			} else if (pressedKeys.contains(KeyCode.UP)) {
@@ -42,7 +45,8 @@ public class Speler2 extends SpelerRechthoek implements KeyListener, Collided, C
 			}
 		} 
 	}
-
+	
+	// Zorg dat de controls omgedraaid (inverted) worden.
 	public static void invert() {
 		if (inverted) {
 			inverted = false;
@@ -50,7 +54,13 @@ public class Speler2 extends SpelerRechthoek implements KeyListener, Collided, C
 			inverted = true;
 		}
 	}
-
+	
+	// Return de inverted state, zodat deze gereset kan worden indien nodig.
+	public static boolean getInverted() {
+		return inverted;
+	}
+	
+	// Zorg ervoor dat de speler niet door de borders heen kan glitchen
 	@Override
 	public void onCollision(Collider collidingObject) {
 		if (collidingObject instanceof Border) {
@@ -68,6 +78,7 @@ public class Speler2 extends SpelerRechthoek implements KeyListener, Collided, C
 			}
 		}
 	}
+	
 	
 	public void setPuntenAantal(int waarde) {
 		puntenAantal = waarde;

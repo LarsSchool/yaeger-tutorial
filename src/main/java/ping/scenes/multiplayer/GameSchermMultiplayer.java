@@ -43,7 +43,7 @@ public class GameSchermMultiplayer extends DynamicScene implements EntitySpawner
 	public void setupEntities() {
 		
 		//EXPENDABLE MIDDENLIJN
-		Middenlijn middenlijn = new Middenlijn(
+		middenlijn = new Middenlijn(
 				new Coordinate2D(getWidth() / 2 - 20, 0),
 				new Size(40, getHeight()));
 		addEntity(middenlijn);
