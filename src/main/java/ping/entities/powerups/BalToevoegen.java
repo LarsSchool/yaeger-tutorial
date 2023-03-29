@@ -3,6 +3,7 @@ package ping.entities.powerups;
 import java.util.Random;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
+import com.github.hanyaeger.api.entities.Collider;
 
 
 public class BalToevoegen extends PowerUp{
@@ -16,7 +17,7 @@ public class BalToevoegen extends PowerUp{
     }
     
     // Zorg ervoor dat er een nieuwe bal spawnt.
-    public void doPowerUp(){
+    public void doPowerUp(Collider collidingObject){
     	aantalBallen++;
     	PowerUpSpawner.spawnNewBal();
     	

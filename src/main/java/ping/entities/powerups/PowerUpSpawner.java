@@ -76,7 +76,7 @@ public class PowerUpSpawner extends EntitySpawner {
 				spawn(new Inverter("sprites/powerUp-blauw.png", new Coordinate2D(x, y), new Size(50, 50)));
 				break;
 			case 3:
-			//MET HET VERWIJDEREN VAN DE 3E BAL GAAT IETS MIS EN BLIJVEN DE OVERIGE 2 DE HELE TIJD
+			// MET HET VERWIJDEREN VAN DE 3E BAL GAAT IETS MIS EN BLIJVEN DE OVERIGE 2 DE HELE TIJD
 				spawn(new BalToevoegen("sprites/powerUp-rood.png", new Coordinate2D(x, y), new Size(50, 50)));
 				break;
 			}
