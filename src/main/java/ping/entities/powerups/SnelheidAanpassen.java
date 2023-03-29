@@ -2,6 +2,8 @@ package ping.entities.powerups;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
+import com.github.hanyaeger.api.entities.Collider;
+
 import ping.entities.Bal;
 
 public class SnelheidAanpassen extends PowerUp {
@@ -13,7 +15,7 @@ public class SnelheidAanpassen extends PowerUp {
     
     // Zorgt ervoor dat de snelheid van de bal een random waarde tussen de 5 en 10 krijgt.
     // Als de random waarde hetzelfde is als de huidige snelheid, moet er opnieuw gerolt worden.
-    public void doPowerUp(){
+    public void doPowerUp(Collider collidingObject){
         int nieuweSnelheid = getRandom(5) + 5;
         while(nieuweSnelheid > 7 || nieuweSnelheid < 2 || Bal.getBalSnelheid() == nieuweSnelheid){
             nieuweSnelheid = getRandom(5) + 5;

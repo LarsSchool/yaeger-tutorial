@@ -7,7 +7,7 @@ import com.github.hanyaeger.api.entities.Collider;
 import ping.entities.speler.Speler1;
 import ping.entities.speler.Speler2;
 
-public class Inverter extends PowerUp implements Collided {
+public class Inverter extends PowerUp {
 	public int invert;
 
 	public Inverter(String resource, Coordinate2D initialLocation, Size size) {
@@ -16,17 +16,12 @@ public class Inverter extends PowerUp implements Collided {
 	}
 
     // Zorg dat als de invert-powerups opgepakt wordt, de andere speler geïnvert wordt.
-	@Override
-	public void onCollision(Collider collidingObject) {
+	public void doPowerUp(Collider collidingObject) {
 		if (collidingObject instanceof Speler1) {
 			Speler2.invert();
 		} else if (collidingObject instanceof Speler2) {
 			Speler1.invert();
 		}
-		doPowerUp();
-	}
-	
-	public void doPowerUp() {
 		// Haalt de powerups van het scherm
 		remove();
 	}

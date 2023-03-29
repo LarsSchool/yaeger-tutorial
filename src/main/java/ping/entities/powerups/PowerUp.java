@@ -21,7 +21,7 @@ public abstract class  PowerUp extends DynamicSpriteEntity implements Collided {
     // Als de powerups opgepakt wordt, moet de powerups uitgevoerd worden.
     @Override
     public void onCollision(Collider collidingObject) {
-    	doPowerUp();
+    	doPowerUp(collidingObject);
     }
     
     // Een functie die een random waarde returnt, omdat er anders elke keer een variabele Random/ rand
@@ -30,7 +30,7 @@ public abstract class  PowerUp extends DynamicSpriteEntity implements Collided {
 		return rand.nextInt(waarde);
     }
 
-    public abstract void doPowerUp();
+    public abstract void doPowerUp(Collider collidingObject);
     
     public abstract void setMotionPowerUp();
 }

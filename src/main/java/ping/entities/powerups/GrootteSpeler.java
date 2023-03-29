@@ -2,6 +2,7 @@ package ping.entities.powerups;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
+import com.github.hanyaeger.api.entities.Collider;
 
 import ping.entities.speler.Speler1;
 import ping.entities.speler.Speler2;
@@ -19,7 +20,7 @@ public class GrootteSpeler extends PowerUp {
 	}
 	
 	// Zorg ervoor dat de hoogte van de spelers vervangen wordt met een random waarde van 80 tot 150
-	public void doPowerUp() {
+	public void doPowerUp(Collider collidingObject) {
 		int randomWaarde = getRandom(7) + 8;
 		speler1.setHeight(randomWaarde * 10);
 		speler2.setHeight(randomWaarde * 10);
