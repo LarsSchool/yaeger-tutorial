@@ -9,5 +9,4 @@ public abstract class SpelerRechthoek extends DynamicRectangleEntity {
 	public SpelerRechthoek(Coordinate2D initialLocation, Size size) {
 		super(initialLocation, size);
 	}
-
 }
