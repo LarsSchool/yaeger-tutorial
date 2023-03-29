@@ -39,7 +39,7 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 
 	private boolean speler1Aangeraakt = false;
 	private boolean speler2Aangeraakt = false;
-	private boolean muurAangeraakt = false;
+//	private boolean muurAangeraakt = false;
 
 	// Constructor bal multiplayer
 	public Bal(Ping ping, String resource, Coordinate2D initialLocation, Size size, Speler1 speler1, Speler2 speler2,
@@ -139,6 +139,7 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 			}
 			setMotion(balSnelheid, richting);
 		} else if (collidingObject instanceof SingleplayerMuur) {
+			speler1Aangeraakt = false;
 			
 			// Dit zorgt er voor dat de bal niet door de muur heen glitcht.
 			if (richting >= 0 && richting <= 180) {
@@ -220,16 +221,12 @@ public class Bal extends DynamicSpriteEntity implements Collided, SceneBorderTou
 			} else if (Ping.getSpelerAantal() == 1) {
 				if (collidingObject instanceof Speler1 && !speler1Aangeraakt) {
 					speler1Aangeraakt = true;
-					muurAangeraakt = false;
+//					muurAangeraakt = false;
 					aantalBalTouches++;
 					balSnelheid += 1;
 					speler1.setPuntenAantal(Speler1.getPuntenAantal() + 1);
 					puntenSpeler1.setPuntenText(Speler1.getPuntenAantal());
-				} else if (collidingObject instanceof SingleplayerMuur && !muurAangeraakt) {
-					muurAangeraakt = true;
-					speler1Aangeraakt = false;
-					aantalBalTouches++;
-				}
+				} 
 			}
 		}
 	}
