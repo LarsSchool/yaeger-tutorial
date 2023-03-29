@@ -2,7 +2,6 @@ package ping.scenes.singleplayer;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.scenes.StaticScene;
-
 import ping.Ping;
 import ping.entities.buttons.ExitButton;
 import ping.entities.buttons.MultiplayerButton;
