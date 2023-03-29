@@ -8,7 +8,6 @@ import com.github.hanyaeger.api.userinput.KeyListener;
 import javafx.scene.input.KeyCode;
 import ping.Ping;
 import ping.entities.Border;
-
 import java.util.Set;
 
 public class Speler2 extends SpelerRechthoek implements KeyListener, Collided, Collider {
@@ -17,7 +16,6 @@ public class Speler2 extends SpelerRechthoek implements KeyListener, Collided, C
 
 	public Speler2(Coordinate2D location, Size size) {
 		super(location, size);
-
 	}
 
 	@Override
@@ -73,12 +71,10 @@ public class Speler2 extends SpelerRechthoek implements KeyListener, Collided, C
 				Coordinate2D locatie = new Coordinate2D(this.getAnchorLocation().getX(),
 						this.getAnchorLocation().getY() + 5);
 				setAnchorLocation(locatie);
-//				setMotion(0, 180d);
 				setSpeed(0);
 			}
 		}
 	}
-	
 	
 	public void setPuntenAantal(int waarde) {
 		puntenAantal = waarde;

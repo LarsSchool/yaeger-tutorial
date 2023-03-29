@@ -18,7 +18,6 @@ public class TitelScherm extends StaticScene{
 	    this.ping = ping;
 	}
 
-
 	@Override
 	public void setupScene(){
 		setBackgroundImage("backgrounds/pong-video-game.gif");

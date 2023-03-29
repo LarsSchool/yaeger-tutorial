@@ -70,6 +70,4 @@ public class GameOverMultiplayer extends StaticScene{
 	public static void setGewonnenSpeler(int waarde) {
 		gewonnenSpeler = waarde;
 	}
-	
-
 }
