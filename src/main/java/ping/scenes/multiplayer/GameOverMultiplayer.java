@@ -40,6 +40,7 @@ public class GameOverMultiplayer extends StaticScene{
 
 		gewonnenText.setFont(Font.font("Roboto", FontWeight.BOLD, 50));
 	    gewonnenText.setFill(Color.GOLDENROD);
+	    
 		// Knoppen aanmaken
 	    PlayAgainButton playAgainButton =
 				new PlayAgainButton(new Coordinate2D(getWidth()/3  , (getHeight()/2 - 20)), ping);

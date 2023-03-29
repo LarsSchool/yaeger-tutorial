@@ -27,7 +27,7 @@ public class GameSchermSingleplayer extends DynamicScene{
 	@Override
 	public void setupEntities() {
 
-		// muur
+		// Muur
 		SingleplayerMuur muur = new SingleplayerMuur(
 				new Coordinate2D(0, 0),
 				new Size(40, getHeight()));

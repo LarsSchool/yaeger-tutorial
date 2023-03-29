@@ -96,7 +96,7 @@ public class GameSchermMultiplayer extends DynamicScene implements EntitySpawner
 		puntenSpeler2.setPuntenText(Speler2.getPuntenAantal());
 	}
 
-	// deze methode maakt de powerups aan
+	// Deze methode maakt de powerups aan
 	@Override
 	public void setupEntitySpawners() {
 		PowerUpSpawner powerupSpawner = new PowerUpSpawner(ping, 50, this.getWidth(), this.getHeight(), speler1, speler2, puntenSpeler1, puntenSpeler2, middenlijn);
