@@ -29,9 +29,10 @@ public class GameOverMultiplayer extends StaticScene{
 	public void setupScene() {
 		setBackgroundImage("backgrounds/eindscherm_ping.png");
 	}
-
+	// Deze methode maakt alle objecten die gebruikt worden in het multiplayer game-over scherm aan.
 	@Override
 	public void setupEntities() {
+		// Winnaar aangeven
 	    var gewonnenText = new TextEntity(
 		        new Coordinate2D(getWidth() / 4, getHeight() / 8 + 40),
 		        "Speler " + gewonnenSpeler + " heeft gewonnen!"
@@ -39,17 +40,21 @@ public class GameOverMultiplayer extends StaticScene{
 
 		gewonnenText.setFont(Font.font("Roboto", FontWeight.BOLD, 50));
 	    gewonnenText.setFill(Color.GOLDENROD);
-		
-	    PlayAgainButton playAgainButton = new PlayAgainButton(new Coordinate2D(getWidth()/3  , (getHeight()/2 - 20)), ping);
-	    ExitButton exitButton = new ExitButton(new Coordinate2D(getWidth()/ 3 + 120, (getHeight()/2) + 150), ping);
+		// Knoppen aanmaken
+	    PlayAgainButton playAgainButton =
+				new PlayAgainButton(new Coordinate2D(getWidth()/3  , (getHeight()/2 - 20)), ping);
+	    ExitButton exitButton =
+				new ExitButton(new Coordinate2D(getWidth()/ 3 + 120, (getHeight()/2) + 150), ping);
 		SingleplayerButton singleplayerButton =
 				new SingleplayerButton(new Coordinate2D((getWidth()/8 * 3) + 55, (getHeight()/2) + 100), ping);
 
+		// Knoppen laten zien
 		addEntity(singleplayerButton);
 		addEntity(gewonnenText);
 	    addEntity(exitButton);
 	    addEntity(playAgainButton);
-	    
+
+	    // Punten voor beide spelers aanmaken en laten zien
 	    puntenSpeler1 = new ScoreTekst(new Coordinate2D(getWidth()/2-22, getHeight()/4 + 15));
 		addEntity(puntenSpeler1);
 		
@@ -60,7 +65,7 @@ public class GameOverMultiplayer extends StaticScene{
 		puntenSpeler2.setPuntenText(Speler2.getPuntenAantal()); 
 	}
 	
-	// Zorgt dat de juiste speler gedisplayed wordt op het game over scherm (De winnaar).
+	// Zorgt dat de winaar op het game over scherm wordt gezet
 	public static void setGewonnenSpeler(int waarde) {
 		gewonnenSpeler = waarde;
 	}

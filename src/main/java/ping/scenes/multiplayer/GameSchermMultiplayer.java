@@ -39,23 +39,24 @@ public class GameSchermMultiplayer extends DynamicScene implements EntitySpawner
 		setBackgroundImage("backgrounds/background_ping.png");
 	}
 
+	// Deze methode maakt alle objecten die gebruikt worden in het multiplayer scherm aan.
 	@Override
 	public void setupEntities() {
 		
-		//EXPENDABLE MIDDENLIJN
+		// Middenlijn die wordt vergroot
 		middenlijn = new Middenlijn(
 				new Coordinate2D(getWidth() / 2 - 20, 0),
 				new Size(40, getHeight()));
 		addEntity(middenlijn);
 		
 		
-		//SCOREBORD
+		// Scorebord
 		puntenSpeler1 = new ScoreTekst(new Coordinate2D(getWidth()/4, getHeight()/8));
 		addEntity(puntenSpeler1);
 		puntenSpeler2 = new ScoreTekst(new Coordinate2D(getWidth()/4 * 3, getHeight()/8));
 		addEntity(puntenSpeler2);
 
-		// SPELERS
+		// Spelers
 		speler1 = new Speler1(new Coordinate2D(getWidth() / 20 - 30, getHeight() / 2 - 70),
 				new Size(30, 130));
 		addEntity(speler1);
@@ -66,11 +67,12 @@ public class GameSchermMultiplayer extends DynamicScene implements EntitySpawner
 		//Zet de punten op 0
 		puntenSpeler1.setPuntenText(Speler1.getPuntenAantal());
 		puntenSpeler2.setPuntenText(Speler2.getPuntenAantal());
-		
+
+		// Maakt een bal aan
 		Bal bal = new Bal(ping, "sprites/bal.png", new Coordinate2D(getWidth()/2 - (30/2), getHeight()/2 - (30/2)), new Size(30,30), speler1, speler2, puntenSpeler1, puntenSpeler2, middenlijn);
 		addEntity(bal);
 
-		// ALLE BORDERS TOEVOEGEN
+		// Alle borders aanmaken
 		Border borderLinksBoven = new Border("sprites/border.png", new Coordinate2D(0, 0),
 				new Size(getWidth() / 2, 20));
 		addEntity(borderLinksBoven);
@@ -86,13 +88,15 @@ public class GameSchermMultiplayer extends DynamicScene implements EntitySpawner
 		Border borderRechtsOnder = new Border("sprites/border.png", new Coordinate2D(getWidth() / 2, getHeight() - 20),
 				new Size(getWidth() / 2, 20));
 		addEntity(borderRechtsOnder);
-		
+
+		// Reset punten en laat punten zien
 		speler1.setPuntenAantal(0);
 		puntenSpeler1.setPuntenText(Speler1.getPuntenAantal());
 		speler2.setPuntenAantal(0);
 		puntenSpeler2.setPuntenText(Speler2.getPuntenAantal());
 	}
 
+	// deze methode maakt de powerups aan
 	@Override
 	public void setupEntitySpawners() {
 		PowerUpSpawner powerupSpawner = new PowerUpSpawner(ping, 50, this.getWidth(), this.getHeight(), speler1, speler2, puntenSpeler1, puntenSpeler2, middenlijn);

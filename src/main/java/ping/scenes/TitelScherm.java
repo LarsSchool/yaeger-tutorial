@@ -18,21 +18,23 @@ public class TitelScherm extends StaticScene{
 	    this.ping = ping;
 	}
 
-	
+
 	@Override
 	public void setupScene(){
 		setBackgroundImage("backgrounds/pong-video-game.gif");
 	}
 
+	// Deze methode zorgt ervoor dat de knoppen in het beeld komen
 	@Override
 	public void setupEntities(){
+		// Text aanmaken
 	    var pingText = new TextEntity(
 	        new Coordinate2D(getWidth() / 2, getHeight() / 8),
 	        "Ping"
 	    );	    
 	    
 	    pingText.setFont(Font.font("Helvetica", 40));
-	    
+	    // Knoppen aanmaken
 	    SingleplayerButton singleplayerButton =
 				new SingleplayerButton(new Coordinate2D((getWidth()/8 * 3) + 50, (getHeight()/6 * 4) + 40), ping);
 
@@ -44,9 +46,9 @@ public class TitelScherm extends StaticScene{
 	    pingText.setFill(Color.ORANGE);
 
 	    pingText.setFont(Font.font("Roboto", FontWeight.SEMI_BOLD, 80));
-
+		// Tekst laten zien
 	    addEntity(pingText);
-
+		// Knoppen laten zien
 	    addEntity(singleplayerButton);
 		addEntity(multiplayerButton);
 	}

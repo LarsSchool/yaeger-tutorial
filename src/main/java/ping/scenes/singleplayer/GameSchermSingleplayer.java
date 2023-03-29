@@ -23,6 +23,7 @@ public class GameSchermSingleplayer extends DynamicScene{
 		setBackgroundImage("backgrounds/background_ping.png");
 	}
 
+	// Deze methode maakt alle objecten die gebruikt worden in het singleplayer scherm aan.
 	@Override
 	public void setupEntities() {
 
@@ -32,22 +33,22 @@ public class GameSchermSingleplayer extends DynamicScene{
 				new Size(40, getHeight()));
 		addEntity(muur);
 		
-		//SCOREBORD
+		// Scorebord
 		ScoreTekst puntenSpeler1 = new ScoreTekst(new Coordinate2D(getWidth()/2, getHeight()/8));
 		addEntity(puntenSpeler1);
 
-		// spelers
+		// Spelers
 		Speler1 speler1 = new Speler1(new Coordinate2D(getWidth() - getWidth() / 20 - 10, getHeight() / 2 - 70),
 				new Size(40, 150));
 		addEntity(speler1);
 		
 		puntenSpeler1.setPuntenText(Speler1.getPuntenAantal());
 		
-		// bal
+		// Bal
 		Bal bal = new Bal(ping, "sprites/bal.png", new Coordinate2D(getWidth()/2 - (30/2), getHeight()/2 - (30/2)), new Size(30,30), speler1, puntenSpeler1);
 		addEntity(bal);
 
-		// borders
+		// Borders
 		Border borderLinksBoven = new Border("sprites/border.png", new Coordinate2D(0, 0),
 				new Size(getWidth() / 2, 20));
 			addEntity(borderLinksBoven);

@@ -24,34 +24,27 @@ public class GameOverSingleplayer extends StaticScene{
 	public void setupScene() {
 		setBackgroundImage("backgrounds/eindscherm_ping.png");
 	}
-
+	// Deze methode maakt alle objecten die gebruikt worden in het singleplayer game-over scherm aan.
 	@Override
 	public void setupEntities() {
+		// Knoppen en punten aanmaken
 	    PlayAgainButton playAgainButton =
 				new PlayAgainButton(new Coordinate2D(getWidth()/3  , (getHeight()/2 - 20)), ping);
-	    	addEntity(playAgainButton);
+
 	    ExitButton exitButton = new ExitButton(new Coordinate2D(getWidth()/ 3 + 120, (getHeight()/2) + 150), ping);
-	    	addEntity(exitButton);
+
 		MultiplayerButton multiplayerButton =
 				new MultiplayerButton(new Coordinate2D((getWidth()/8 * 3) + 55, (getHeight()/2) + 100), ping);
-			addEntity(multiplayerButton);
+
 			
 			puntenSpeler1 = new ScoreTekst(new Coordinate2D(getWidth()/2-22, getHeight()/4));
+			// Knoppen
+			addEntity(playAgainButton);
+			addEntity(exitButton);
+			addEntity(multiplayerButton);
+
+			// Punten
 			addEntity(puntenSpeler1);
-			
-			
-			
 			puntenSpeler1.setPuntenText(Speler1.getPuntenAantal());
-			
-			
-			//Deze getter werkt niet omdat er dan gekloot wordt met static. Vandaar de erg lelijke en onveilige public puntenAantal.
-//			puntenSpeler1.setPuntenText(Speler1.getPuntenAantal());
-
 	}
-	
-	
-
-	
-	
-
 }
