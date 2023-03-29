@@ -6,19 +6,7 @@ import com.github.hanyaeger.api.entities.impl.DynamicRectangleEntity;
 
 public abstract class SpelerRechthoek extends DynamicRectangleEntity {
 
-	//KAN DEZE KLASSE NIET GEWOON WEG?
-//	private Size size;
-
 	public SpelerRechthoek(Coordinate2D initialLocation, Size size) {
 		super(initialLocation, size);
-//		this.size = size;
 	}
-//	
-//	public double getHeight(){
-//		return size.height();
-//	}
-//
-//	
-//	public abstract void setPuntenAantal(int waarde);
-
 }
